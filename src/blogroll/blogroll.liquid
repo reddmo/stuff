@@ -1,0 +1,28 @@
+---
+title: Blogroll
+description: Blogroll
+---
+<h1 class="posts">Blogroll</h1><br>
+<ul class="grid" role="list">
+    {% for blog in blogData %}
+    
+        <li class="card">
+            <h3>
+                <img alt="none" src="{{ blog.favicon }}" width="32px" height="32px" loading="lazy" decoding="async" /> 
+                <a href="{{ blog.url | url }}" target="_blank">
+                    {{ blog.name }}
+                </a>
+            </h3>
+            {{ blog.cleansedUrl }}<br>
+            {% if blog.latestPost and blog.latestPost.title %}
+            <span style="color: var(--color-head); font-size: var(--font-size-l)">
+                <b>Latest post:</b>
+                <a style="text-decoration: none" href="{{ blog.latestPost.url | url }}" target="_blank">
+                    {{ blog.latestPost.title }}
+                </a>
+            </span>
+            {% endif %} 
+        </li>
+    
+    {% endfor %}
+</ul>

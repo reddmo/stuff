@@ -1,0 +1,120 @@
+<style>
+  .navbar {
+    width: auto;
+    padding: var(--space-3) var(--container-padding-sides);
+    margin: 0 auto;
+    display: flex;
+	top: 0; 
+    position: static;
+    background: 
+    linear-gradient(135deg,
+    var(--color-link),
+    var(--color-link) 5%,
+    var(--color-primary) 5%,
+    var(--color-primary) 10%,
+    var(--color-head) 10%,
+    var(--color-head) 15%,
+    var(--color-background) 15%,
+    var(--color-background) 85%,
+    var(--color-head) 85%,
+    var(--color-head) 90%,
+    var(--color-primary) 90%,
+    var(--color-primary) 95%,
+    var(--color-link) 95%)
+  }
+  
+  .navbar nav {
+    flex: 3;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    background-color: none !important;
+  } 
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+  
+  .link-home {
+    list-style: none;
+    justify-content: center;
+    font-weight: bold;
+    font-size: var(--font-size-xl);
+    background-size: auto;
+    background-repeat: repeat;
+    background-clip: text;
+    filter: drop-shadow(0px 4px 2px var(--slate-12));
+  }
+  
+  .button {
+    background-color: transparent;
+    display: inline-block;
+    place-items: center;
+    align-items: center;
+    font: inherit;
+    padding: 0.1rem var(--space-1);
+    text-decoration: none !important;
+    text-align: center;
+  }
+
+  .menu {
+    background-color: var(--color-background);
+    border: .10px solid var(--color-background);
+    color: var(--color-link);
+    font-size: var(--font-size-xs);
+    min-width: 6ch;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    text-transform: none;
+    box-shadow: 0px 4px 7px 0px var(--slate-10);
+    padding: 0.1rem var(--space-1);
+    text-align: center;
+  }
+
+  .menu:hover {
+    color: var(--color-text) !important;
+    border: .10px solid var(--color-primary);
+  } 
+
+/* all buttons have a min size */
+  .button:where(:not(:has(svg))) {
+    text-align: center;
+    min-inline-size: 6ch;
+  }
+   
+/* @media (max-width: 1250px) {
+    .navbar-links > *:nth-child(1) {
+      width: 100%;
+    }
+    .navbar-links > *:nth-child(2) {
+      margin-left: unset;
+    }
+  } */
+
+</style>
+<a id="top" name="top"></a>
+<header class="navbar">
+  <nav>
+    <div class="link-home">
+    <center><h1><svg height="74" width="342" xmlns="http://www.w3.org/2000/svg">
+    <text x="0" y="42" alignment-baseline="middle" fill="var(--color-link)" font-size="55">stuff<tspan alignment-baseline="middle" stroke="none" fill="var(--color-head)">&</tspan>things</text>
+	</svg></h1></center></div>
+    <div class="navbar-links">
+      <a href="/" aria-label="Back to home page" class="menu">home</a>
+      <a href="/articles" aria-label="Blog articles" class="menu">blog</a>
+      <a href="/about" aria-label="About me page" class="menu">about</a>
+      <a href="/now" aria-label="My Now page" class="menu">now</a>
+      <a href="/blogroll" aria-label="The blogroll" class="menu">roll</a>
+    </div>  
+  </nav>
+</header>

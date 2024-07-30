@@ -1,0 +1,19 @@
+<div class="webmentions" id="webmentions">
+  {% if mentions.likes %}
+    <h3>Likes ({{ mentions.likes | size }})</h3><br> <!--  ({{ mentions.likes | size }}) -->
+    <div class="likes">
+      {% for item in mentions.likes %}
+        <a href="{{ item.url }}"><img src="{{ item.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page"></a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if mentions.reposts %}
+    <h3>Reposts ({{ mentions.reposts | size }})</h3><br> <!-- ({{ mentions.reposts | size }}) -->
+    <div class="reposts">
+      {% for item in mentions.reposts %}
+        <a href="{{ item.url }}"><img src="{{ item.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page"></a>
+      {% endfor %}
+    </div>
+  {% endif %} 
+</div>

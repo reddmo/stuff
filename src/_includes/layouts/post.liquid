@@ -1,0 +1,185 @@
+---
+layout: layouts/default.liquid
+---
+
+<header class="post-header">
+  <h1 class="post-title">{{ title }}</h1>
+  <div class="post-time">
+    <time datetime="{{ post.date }}">
+      {{ page.date | date : "%a, %b %d, %Y" }}
+    </time>
+  </div>
+</header>
+
+<section class="post-container">
+  {{ content }}
+</section>
+
+{% assign mentions = webmentions.mentions | webmentionsByUrl: page.url %}
+{% if mentions.mentionCount > 0 %}
+  {% include 'webmentions.liquid' %}
+{% endif %}
+
+
+{% assign similar = collections.posts | similarPosts: page.inputPath, tags %} {%
+if similar.length > 0 %}
+<section class="related">
+  <h2 class="related-title posts" style="color: var(--color-text)">Some other posts</h2>
+  <ul class="related-posts">
+    {% for post in similar limit: 2 %}
+    <li>
+      <a class="related-article" href="{{ post.url }}">
+        <h3 class="related-article-title">{{ post.data.title }}</h3>
+        <p class="related-article-description">
+        Keep&nbsp;reading&nbsp;→
+        </p>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %} {% include "css/prism.liquid" %}
+
+<style>
+  .post-header {
+    margin-bottom: var(--space-5);
+  }
+  .post-title {
+    font-weight: bolder;
+  }
+  .post-time {
+    color: var(--color-text-shade);
+    font-size: var(--font-size-xs);
+  }
+  .post-container {
+    padding-bottom: var(--space-8);
+    border-bottom: 1.25px solid var(--color-primary);
+  }
+  
+  .post-container a {
+    text-decoration: underline;
+    position: relative;
+    color: var(--color-link);
+  }
+  
+ /* .post-container a::before {
+  content: '';
+  background-color: var(--color-link-hover);
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 8px;
+  z-index: -1;
+  border-radius: 6px;
+  transition: all .3s ease-in-out;
+} */
+
+/*  .post-container a:hover::before {
+  content: '';
+  text-decoration: none;
+  background-color: var(--color-link-hover);
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 8px;
+  z-index: -1;
+  border-radius: 10px;
+} */
+
+  .post-container a:hover {
+    color: var(--color-primary);
+    }
+
+  .post-container h2 {
+    margin-top: var(--space-7);
+  }
+  .post-container h3 {
+    margin-top: var(--space-6);
+  }
+  .post-container blockquote {
+    margin: var(--space-5) 0;
+  }
+  .post-container > * + * {
+    margin-top: var(--space-3);
+  }
+  .post-container > *:first-child {
+    margin-top: 0;
+  }
+  .post-container blockquote > * + * {
+    margin-top: var(--space-3);
+  }
+  .post-container ul,
+  .post-container ol {
+    padding-left: var(--space-6);
+  }
+  .post-container h2 + *,
+  .post-container h3 + *,
+  .post-container h4 + *,
+  .post-container h5 + * {
+    margin-top: var(--space-2);
+  }
+  .related {
+    margin-top: var(--space-8);
+  }
+  .related-posts {
+    list-style: none;
+  }
+  .related-article + .related-article {
+    margin-top: var(--space-4);
+  }
+  .related-article {
+    padding: var(--space-2) 0;
+    color: var(--color-link);
+    text-decoration: unset;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+ /* .related-article-title {
+    transition: color 0.2s ease-in-out;
+  } */
+  .related-article:hover .related-article-title {
+    color: var(--color-link-hover);
+  }
+  .related-article-description {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-shade);
+  }
+  :root {
+    --prism-foreground: #393a34;
+    --prism-background: transparent;
+
+    --prism-comment: #758575;
+    --prism-namespace: #444444;
+    --prism-string: #bc8671;
+    --prism-punctuation: #80817d;
+    --prism-literal: #36acaa;
+    --prism-keyword: #248459;
+    --prism-function: #849145;
+    --prism-deleted: #9a050f;
+    --prism-class: #2b91af;
+    --prism-builtin: #800000;
+    --prism-property: #ce9178;
+    --prism-regex: #ad502b;
+  }
+
+  [data-theme="dark"] {
+    --prism-foreground: #d4d4d4;
+
+    --prism-namespace: #aaaaaa;
+    --prism-comment: #758575;
+    --prism-namespace: #444444;
+    --prism-string: #ce9178;
+    --prism-punctuation: #d4d4d4;
+    --prism-literal: #36acaa;
+    --prism-keyword: #38a776;
+    --prism-function: #dcdcaa;
+    --prism-deleted: #9a050f;
+    --prism-class: #4ec9b0;
+    --prism-builtin: #d16969;
+    --prism-property: #ce9178;
+    --prism-regex: #ad502b;
+  }
+</style>

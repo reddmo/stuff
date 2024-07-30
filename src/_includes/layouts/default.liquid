@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {%if title %}
+      <title>{{ title }}</title>
+      <meta name="twitter:title" content="{{ title }}" />
+      <meta property="og:title" content="{{ title }}" />
+    {% else %}
+      <title>{{ site.title }}</title>
+      <meta name="twitter:title" content="{{ title }}" />
+      <meta property="og:title" content="{{ site.title }}" />
+    {% endif %} 
+
+    {% if description %}
+      <meta name="twitter:description" content="{{ description }}" />
+      <meta name="description" content="{{ description }}" />
+      <meta property="og:description" content="{{ description }}" />
+    {% else %}
+      <meta name="twitter:description" content="{{ site.description }}" />
+      <meta name="description" content="{{ site.description }}" />
+      <meta property="og:description" content="{{ site.description }}" />
+    {% endif %} 
+    
+    <meta property="og:image" content="./public/favicon/favicon.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="webmention" href="https://webmention.io/stuffandthings.lol/webmention" />
+    <link rel="pingback" href="https://webmention.io/stuffandthings.lol/xmlrpc" />
+    {% include "css/reset.liquid" %}
+    {% include "css/global.liquid" %}
+    {% include "css/grid.liquid" %}
+    {% include "css/card.liquid" %}
+    {% include "css/webmention.liquid" %}
+  </head>
+
+  <body>
+    <a href="#skip" class="visually-hidden">Skip to main content</a>
+    {% include "navbar.liquid" %}
+    <hr class="hr">
+    <style>
+      .main-container {
+        margin: 0 auto;
+        max-width: var(--container-max-size);
+        padding: 50px var(--container-padding-sides) var(--space-4);
+      }
+      
+      .head-home {
+        list-style: none;
+        text-decoration: none;
+        background: var(--color-background-shade);
+        }
+
+      .hr {
+        border: .1px solid var(--color-background-shade);
+        color: var(--color-link);
+        }
+             
+    </style>
+    <main class="main-container" id="skip">
+      {{ content }}
+    </main>
+    {% include "footer.liquid" %}
+  </body>
+</html>

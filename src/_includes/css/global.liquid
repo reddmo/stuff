@@ -1,0 +1,305 @@
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    line-height: calc(1em + 0.75rem);
+  }
+    
+  html { 
+  	--slate-1: #f7f9f9;
+  	--slate-2: #f2f6f7;
+  	--slate-3: #e2e9eb;
+  	--slate-4: #c4ccce;
+  	--slate-5: #b5c0c3;
+  	--slate-6: #97a4a8;
+  	--slate-7: #889598;
+  	--slate-8: #707d81;
+  	--slate-9: #626e72;
+  	--slate-10: #576366;
+  	--slate-11: #454f52;
+  	--slate-12: #343c3f;
+  	--slate-13: #212829;
+  	--slate-14: #121718;
+  	--slate-15: #0b0e0f;
+  	--slate-16: #030404;
+  	--slate-accent: #5c7e86;
+
+  	--sand-1: #fff7e8;
+  	--sand-2: #fff2d5;
+  	--sand-3: #ffe2b1;
+  	--sand-4: #edc389;
+  	--sand-5: #eab261;
+  	--sand-6: #d49322;
+  	--sand-7: #c68200;
+  	--sand-8: #aa6b00;
+  	--sand-9: #975e00;
+  	--sand-10: #885300;
+  	--sand-11: #6e4200;
+  	--sand-12: #563100;
+  	--sand-13: #3b1f00;
+  	--sand-14: #261000;
+  	--sand-15: #1a0800;
+  	--sand-16: #090200;
+  	--sand-accent: #b27000;
+
+  	--cyan-1: #e9fdff;
+  	--cyan-2: #d5fdff;
+  	--cyan-3: #aff5ff;
+  	--cyan-4: #83d9f0;
+  	--cyan-5: #50d0ee;
+  	--cyan-6: #00b6d9;
+  	--cyan-7: #00a6c7;
+  	--cyan-8: #008ba8;
+  	--cyan-9: #007b96;
+  	--cyan-10: #006e87;
+  	--cyan-11: #00596e;
+  	--cyan-12: #004456;
+  	--cyan-13: #002e3b;
+  	--cyan-14: #001b26;
+  	--cyan-15: #00121a;
+  	--cyan-16: #00050a;
+  	--cyan-accent: #0088a5;
+
+  	--avocado-1: #f0fdef;
+  	--avocado-2: #e4fde2;
+  	--avocado-3: #ccf5c8;
+  	--avocado-4: #a9daa5;
+  	--avocado-5: #8fd18b;
+  	--avocado-6: #68b865;
+  	--avocado-7: #55a951;
+  	--avocado-8: #369034;
+  	--avocado-9: #2a8029;
+  	--avocado-10: #227321;
+  	--avocado-11: #155d15;
+  	--avocado-12: #074809;
+  	--avocado-13: #013002;
+  	--avocado-14: #001d01;
+  	--avocado-15: #001201;
+  	--avocado-16: #000500;
+  	--avocado-accent: #009400;
+
+  	--red-1: #fff4ee;
+  	--red-2: #ffede4;
+  	--red-3: #ffdbcd;
+  	--red-4: #feb6a3;
+  	--red-5: #ffa288;
+  	--red-6: #eb7f61;
+  	--red-7: #dd6c4e;
+  	--red-8: #c45131;
+  	--red-9: #b04427;
+  	--red-10: #a03b1f;
+  	--red-11: #832c13;
+  	--red-12: #681d07;
+  	--red-13: #481002;
+  	--red-14: #2e0700;
+  	--red-15: #1f0401;
+  	--red-16: #0c0000;
+  	--red-accent: #d31a00;
+
+  	--lilac-1: #fcf5ff;
+  	--lilac-2: #fdeeff;
+  	--lilac-3: #f4dcff;
+  	--lilac-4: #dabcf8;
+  	--lilac-5: #d2a9f9;
+  	--lilac-6: #b988e6;
+  	--lilac-7: #aa77d8;
+  	--lilac-8: #935dc1;
+  	--lilac-9: #8250ad;
+  	--lilac-10: #76469d;
+  	--lilac-11: #5f3682;
+  	--lilac-12: #4a2667;
+  	--lilac-13: #321747;
+  	--lilac-14: #1e0b2d;
+  	--lilac-15: #13061e;
+  	--lilac-16: #06010c;
+  	--lilac-accent: #a500fc;
+
+    --gradient-rainbow: linear-gradient(90deg, #cf4662 10%, #fbbe25 30%, #62c95c 50%, #08bccb 75%, #a977d5 90%);
+    --color-background: #ffffff;
+    --color-background-shade: var(--slate-2);
+    --color-text: #4c4f69;
+    --color-text-shade: #575650;
+    --color-primary: var(--cyan-7);
+    --color-link: #e31c3d;
+    --color-link-hover: var(--cyan-7);
+    --color-head: #4c2c92;
+    --color-date: #1c2833;
+    --color-box: #f7ca18;
+    --color-card: rgba(211, 26, 0, 0.1);
+    --color-navbar-hover: var(--avocado-6);
+    --gradient-linear: linear-gradient(-45deg,
+    var(--color-text) 5%,
+    var(--color-link) 30%,
+    var(--color-head) 30%,
+    var(--color-primary) 95%);
+
+    --font-family: -apple-system, BlinkMacSystemFont, "Inter", "IBM Plex Sans",
+      Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+      Segoe UI Symbol;
+
+    --container-max-size: 75ch;
+    --container-padding-sides: var(--space-4);
+    
+    --space-1: 0.35rem;
+    --space-2: 0.5rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+    --space-6: 2.5rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 5rem;
+    --space-10: 6rem;
+
+    --font-size-xs: clamp(1.1rem, 0.12vw + 1.1rem, 1.1rem);
+    --font-size-base: clamp(1.3rem, 0.16vw + 1.3rem, 1.5rem);
+    --font-size-lg: clamp(1.8rem, 0.12vw + 1.8rem, 2rem);
+    --font-size-xl: clamp(2rem, 0.14vw + 2rem, 2.2rem);
+    --font-size-xxl: clamp(2.4rem, 0.14vw + 2.4rem, 2.6rem);
+    font: -apple-system-body;
+  }
+  [data-theme="dark"] {
+    --color-background: var(--slate-15);
+    --color-background-shade: var(--slate-13);
+    --color-text: #d2dee1;
+    --color-text-shade: #989f9f;
+    --color-primary: var(--red-accent);
+    --color-link: var(--cyan-5);
+    --color-link-hover: rgba(246,36,89);
+    --color-head: #f7ca18;
+    --color-box: #7600a8;
+    --color-navbar-hover: var(--avocado-7);
+    --gradient-linear: linear-gradient(-15deg,
+    var(--color-text) 5%,
+    var(--color-link) 30%,
+    var(--color-head) 30%,
+    var(--color-primary) 95%);
+  }
+    
+  h1 {
+    font-size: var(--font-size-xxl);
+    color: var(--color-head);
+    font-weight: bolder;    
+  }
+  h1.posts {
+    font-size: var(--font-size-xxl);
+    color: var(--color-link);
+    font-weight: bolder;
+  }    
+  h2 {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary);
+    font-weight: medium;
+    margin-bottom: var(--space-2);
+  }
+  h2.posts {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary);
+    font-weight: medium;
+  } 
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: var(--font-size-base);
+    color: var(--color-head);
+    font-weight: medium;
+    margin-bottom: var(--space-2);
+  }
+    
+  body {
+    font-family: var(--font-family);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    font-size: var(--font-size-base);
+    text-rendering: optimizeLegibility;
+  }
+  a {
+    color: var(--color-link);
+    text-decoration: underline solid .1em var(--color-link);
+  }
+  
+  a:hover {
+    color: var(--color-text);
+    text-decoration: underline solid .1em var(--color-link-hover);
+    }
+        
+  .linear {
+    color: transparent;
+    background-image: var(--gradient-linear);
+    background-size: 100%;
+    background-repeat: repeat;
+    background-clip: text;
+  }
+  img,
+  picture {
+    height: auto;
+    max-width: 100%;
+    flex-shrink: 0;
+  }
+  blockquote {
+    padding: 0 1em;
+    color: var(--color-text-shade);
+    border-left: 0.25em solid var(--color-primary);
+  }
+  
+  button {
+    display: inline-block;
+    background: var(--color-primary);
+    color: unset;
+    border-radius: 4px;
+    border: none;
+    font-size: var(--font-size-base);
+    place-items: center;
+    font-size: inherit;
+    line-height: 1.15em;
+    transition: background 0.2s ease-in-out;
+    cursor: pointer;
+  }
+   button:hover {
+    background-color: var(--color-text);
+    color: unset;
+  }
+
+  pre {
+    padding: var(--space-4);
+    border-radius: 4px;
+    font-size: var(--font-size-xs);
+    background: var(--color-background-shade);
+    --prism-background: var(--color-background-shade);
+    --prism-font-size: var(--font-size-xs);
+  }
+  code {
+    font-size: var(--font-size-xs);
+    white-space: pre-wrap;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+    
+  .gradient-text-linear {
+    color: transparent;
+    background-image: var(--gradient-rainbow);
+    background-size: 5%;
+    background-repeat: repeat;
+    background-clip: text;
+  }
+</style>

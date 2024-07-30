@@ -1,0 +1,42 @@
+<style>
+  .footer {
+    max-width: var(--container-max-size);
+    padding: var(--space-7) var(--container-padding-sides);
+    margin: var(--space-6) auto 8rem auto;
+  }
+  .footer a {
+    text-decoration: none;
+    color: var(--color-link);
+  }
+  .footer a:hover {
+    color: var(--color-primary);
+    /* transition: color 0.2s ease-in-out; */
+  }
+  .footer-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    row-gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+  .link-home {
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+  }
+</style>
+
+<footer class="footer">
+  <nav>
+    <ul class="footer-links">
+      <li><a href="https://social.lol/@jasonm" target="_blank">{% include 'img/social-mastodon.svg' %} </a></li>
+      <li><a href="https://github.com/reddmo" target="_blank" rel="me">{% include 'img/social-github.svg' %} </a></li>
+      <li><a href="https://bsky.app/profile/jasonmoser.bsky.social" target="_blank">{% include 'img/social-bluesky.svg' %} </a></li>     
+      <li><a href="/feed.xml">{% include 'img/rss.svg' %} </a></li>
+      <li>{% include "dark-toggler.liquid" %}</li>
+    
+    </ul><br>
+    <center><a href="#top" aria-label="Back to top" class="menu">back to top</a><br><br><a href="https://ko-fi.com/andycarolan/shop?action=gallery" aria-label="Andy Carolan's Ko-Fi" target="_blank">{% include 'img/CoffeePowered_05.svg' %} {% include 'img/IAmNotARobot_06.svg' %}</a></center>
+  </nav>
+</footer>

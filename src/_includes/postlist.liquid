@@ -1,0 +1,43 @@
+<ul class="grid">
+  {% for post in posts limit: count offset: offset %}
+  <li class="article card">
+    <a href="{{ post.url }}">
+      <h3 class="article-title">{{ post.data.title }}</h3>
+      <div class="article-time">
+        <time datetime="{{ post.date }}">
+          {{ post.date | date : "%a, %b %d, %Y" }}
+        </time>
+      </div>
+      <p class="article-description">{{ post.data.description }}</p>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+
+<style>
+  .article {
+    padding: var(--space-4);
+    color: var(--color-text);
+    display: flex;
+    gap: var(--space-1);
+    margin: var(--space-1);
+  }
+  .article a {
+    text-decoration: unset;
+    color: var(--color-link);
+  }
+  
+  .article:hover .article-title {
+    color: var(--color-primary);
+  }
+  .article-description {
+    font-size: var(--font-size-s);
+    color: var(--color-text);
+    font-weight: 500;
+  }
+  .article-time {
+    color: var(--color-text-shade);
+    font-size: var(--font-size-xs);
+  }  
+</style>
