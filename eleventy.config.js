@@ -6,7 +6,6 @@ import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 import { feedPlugin } from '@11ty/eleventy-plugin-rss';
 import EleventyPluginOgImage from 'eleventy-plugin-og-image';
 
-
 const getSimilarTags = (categoriesA, categoriesB) => {
   if (!categoriesA) return [];
   return categoriesA.filter(Set.prototype.has, new Set(categoriesB)).length;
