@@ -2,7 +2,7 @@
 layout: layouts/default.liquid
 ---
 
-<div class="main-sections"> 
+<div class="main-section"> 
     {% assign tagList = collections | postTags %} {% if tagList.length > 0 %}
   <section>
     <h1 class="posts" style="color: var(--color-text)">Tags</h1><br>
@@ -14,7 +14,7 @@ layout: layouts/default.liquid
 </div>
 
 <style>
-  .main-sections {
+  .main-section {
     display: grid;
     gap: var(--space-7);
     margin-bottom: var(--space-3);
