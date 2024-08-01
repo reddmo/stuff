@@ -2,7 +2,7 @@
   .footer {
     max-width: var(--container-max-size);
     padding: var(--space-7) var(--container-padding-sides);
-    margin: var(--space-6) auto 8rem auto;
+    margin: var(--space-6) auto auto auto;
   }
   .footer a {
     text-decoration: none;
@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-6);
-    row-gap: var(--space-4);
+    row-gap: var(--space-2);
     flex-wrap: wrap;
   }
   .link-home {
@@ -25,9 +25,16 @@
     color: var(--color-primary);
     font-size: var(--font-size-lg);
   }
+  
+  .br {
+  margin: var(--space-2) 0 var(--space-2) 0;
+  border: .1px solid var(--color-background-shade);
+  color: var(--color-link);
+  }
 </style>
 
 <footer class="footer">
+<hr class="br">
   <nav>
     <ul class="footer-links">
       <li><a href="https://social.lol/@jasonm" target="_blank">{% include 'img/social-mastodon.svg' %} </a></li>

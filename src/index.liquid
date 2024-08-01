@@ -9,7 +9,7 @@ layout: layouts/default.liquid
     {% assign count = 1 %}
     {% include "postlist.liquid" %}
   </section>
-<hr class="hr">
+<hr class="br">
   <section>
     <h1 class="posts" style="color: var(--color-text)">More posts</h1><br>
     {% assign posts = collections.posts %}
@@ -17,7 +17,7 @@ layout: layouts/default.liquid
     {% assign offset = 1 %}
     {% include "postlist.liquid" %}
     <br>
-    <a class="articles-link" href="/articles">All the articles</a>
+    <center><a class="menu" href="/articles">all the articles</a></center>
   </section>
 </div>
 
@@ -27,6 +27,7 @@ layout: layouts/default.liquid
     flex-direction: column;
     gap: var(--space-7);
     margin-bottom: var(--space-3);
+    
   }
   .articles-link {
     display: block;
@@ -34,7 +35,24 @@ layout: layouts/default.liquid
     text-decoration: underline solid .1em var(--color-link);
   }
   
-  .br {
-  	line-height: 45px;
+  .menu {
+    background-color: var(--color-background);
+    border: .10px solid var(--color-background);
+    color: var(--color-link);
+    font-size: var(--font-size-xs);
+    min-width: 6ch;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    text-transform: none;
+    box-shadow: 0px 4px 7px 0px var(--slate-10);
+    padding: 0.1rem var(--space-1);
+    text-align: center;
+    text-decoration: none;
   }
+
+  .menu:hover {
+    color: var(--color-text) !important;
+    border: .10px solid var(--color-primary);
+  } 
 </style>
