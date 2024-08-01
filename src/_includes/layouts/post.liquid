@@ -15,11 +15,14 @@ layout: layouts/default.liquid
   {{ content }}
 </section>
 
+<hr class="br">
 {% assign mentions = webmentions.mentions | webmentionsByUrl: page.url %}
+<section class="related">
+<h2 class="related-title posts" style="color: var(--color-text)">On the web</h2>
 {% if mentions.mentionCount > 0 %}
   {% include 'webmentions.liquid' %}
 {% endif %}
-
+</section>
 
 {% assign similar = collections.posts | similarPosts: page.inputPath, tags %} {%
 if similar.length > 0 %}
@@ -53,7 +56,6 @@ if similar.length > 0 %}
   }
   .post-container {
     padding-bottom: var(--space-8);
-    border-bottom: 1.25px solid var(--color-primary);
   }
   
   .post-container a {
