@@ -6,24 +6,22 @@ layout: layouts/default.liquid
     {% assign tagList = collections | postTags %} {% if tagList.length > 0 %}
   <section>
     <h1 class="posts" style="color: var(--color-text)">Tags</h1><br>
- <div class="card">   {%- for tag in tagList -%}
-    <a href="/tags/{{ tag.name }}">{{ tag.name }} ({{ tag.count }})</a>{% if
-    forloop.last != true %}<span> | </span>{% endif %} {%- endfor -%}</div>
+ <div>   {%- for tag in tagList -%}
+    <a href="/tags/{{ tag.name }}" class="articles-link menu">{{ tag.name }} ({{ tag.count }})</a>{% if
+    forloop.last != true %}<span>   </span>{% endif %} {%- endfor -%}</div>
   </section>
   {% endif %}
 </div>
 
 <style>
   .main-sections {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: var(--space-7);
     margin-bottom: var(--space-3);
   }
   .articles-link {
-    display: block;
-    margin-top: var(--space-2);
-    text-decoration: underline solid .1em var(--color-link);
+    margin: var(--space-1);
+    text-decoration: none;
   }
   
   .br {
