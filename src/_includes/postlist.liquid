@@ -2,7 +2,7 @@
   {% for post in posts limit: count offset: offset %}
   <li class="article card">
     <a href="{{ post.url }}">
-      <h3 class="article-title">{{ post.data.title }}</h3>
+      <h2 class="article-title">{{ post.data.title }}</h2>
       <div class="article-time">
         <time datetime="{{ post.date }}">
           {{ post.date | date : "%a, %b %d, %Y" }}
