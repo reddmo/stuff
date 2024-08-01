@@ -4,7 +4,6 @@ import sanitizeHTML from 'sanitize-html';
 import dayjs from 'dayjs';
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 import { feedPlugin } from '@11ty/eleventy-plugin-rss';
-import EleventyPluginOgImage from 'eleventy-plugin-og-image';
 
 const getSimilarTags = (categoriesA, categoriesB) => {
   if (!categoriesA) return [];
