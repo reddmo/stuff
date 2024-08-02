@@ -15,9 +15,7 @@ First, my `_data/webmentions.js` looks like this:
 
 ```js
 import EleventyFetch from "@11ty/eleventy-fetch";
-import dotenv from 'dotenv';
-
-dotenv.config();
+import 'dotenv/config';
 
 export default async function () {
   const WEBMENTIONS_STUFF = process.env.WEBMENTION_IO_TOKEN;
