@@ -137,7 +137,7 @@
       Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
       Segoe UI Symbol;
 
-    --container-max-size: 75ch;
+    --container-max-size: 85ch;
     --container-padding-sides: var(--space-4);
     
     --space-1: 0.35rem;
@@ -265,9 +265,10 @@
     padding: var(--space-4);
     border-radius: 4px;
     font-size: var(--font-size-xs);
-    background: var(--color-background-shade);
-    --prism-background: var(--color-background-shade);
+    background: var(--color-background);
+    --prism-background: var(--color-background);
     --prism-font-size: var(--font-size-xs);
+    box-shadow: 0px 4px 11px 0px var(--slate-12);
   }
   code {
     font-size: var(--font-size-xs);
@@ -283,6 +284,7 @@
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
+    background: var(--color-background);
   }
 
   .visually-hidden {
