@@ -5,6 +5,7 @@ description: What am I up to?
 layout: layouts/page.liquid
 youtube: true
 ---
+<div class="now">
 
 ### What I’m reading
 
@@ -32,3 +33,13 @@ youtube: true
 
 - Stuff
 - Things
+</div>
+
+<style>
+  .now a:hover {
+   outline: 1px solid var(--color-link-hover);
+   background-color: var(--color-link-hover);
+   color: var(--color-background);
+   text-decoration: none;
+   }
+</style>

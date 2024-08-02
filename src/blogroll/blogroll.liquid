@@ -3,13 +3,13 @@ title: Blogroll
 description: Blogroll
 ---
 <h1 class="posts">Blogroll</h1><br>
-<ul class="grid" role="list">
+<ul class="grid roll" role="list">
     {% for blog in blogData %}
     
         <li class="card">
             <h2>
                 <img alt="none" src="{{ blog.favicon }}" width="32px" height="32px" loading="lazy" decoding="async" /> 
-                <a href="{{ blog.url | url }}" target="_blank">
+                <a style="text-decoration: none" href="{{ blog.url | url }}" target="_blank" class="blogroll">
                     {{ blog.name }}
                 </a>
             </h2>
@@ -17,7 +17,7 @@ description: Blogroll
             {% if blog.latestPost and blog.latestPost.title %}
             <span style="color: var(--color-head); font-size: var(--font-size-l)">
                 <b>Latest post:</b>
-                <a style="text-decoration: none" href="{{ blog.latestPost.url | url }}" target="_blank">
+                <a style="text-decoration: none" href="{{ blog.latestPost.url | url }}" target="_blank" class="blogroll">
                     {{ blog.latestPost.title }}
                 </a>
             </span>
@@ -26,3 +26,18 @@ description: Blogroll
     
     {% endfor %}
 </ul>
+
+<style>
+  .roll {
+    margin-bottom: var(--space-8);
+  }
+  .blogroll a {
+    text-decoration: none;
+  }
+  
+  .blogroll:hover {
+   outline: 1px solid var(--color-link-hover);
+   background-color: var(--color-link-hover);
+   color: var(--color-background);
+   text-decoration: none;
+  }
