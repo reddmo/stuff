@@ -12,9 +12,10 @@ Additionally, I've been working extensively on updating the site to make the des
 
 The one big thing I did was make my [Github](https://github.com) repo public. It was private since inception as I worked through the site, design, etc. After over 450 commits, I did some work to merge and move repos to start fresh on the commits. This wasn't (purely) hubris. I had realized about the midpoint of commits that I had accidentally committed my `.env` file. I wanted to erase the history of those commits as well. It only houses my webmentions API token, which I also changed to be extra safe, but I wanted a fairly clean start as well.
 
-I was running into errors deploying the builds after adding `.env` to `.gitignore`. That was the last hurdle prior to cleaning up the commit history before taking it public. It was fixed after a quick stop at the [11ty Discord Channel](https://discord.com/channels/741017160297611315/1022195881698672650). I added the `env` line to my `deploy-neocities.yml` file, which, FYI, if you switch to Neocities, this is a great way to deploy to it.
+I was running into errors deploying the builds after adding `.env` to `.gitignore`. That was the last hurdle prior to cleaning up the commit history before taking it public. It was fixed after a quick stop at the [11ty Discord Channel](https://discord.com/channels/741017160297611315/1022195881698672650). I added the `env` line to my `deploy-neocities.yml` file, which, FYI, if you switch to Neocities, [this is a great way to deploy to it](https://deadrodrick.neocities.org/tutorial/deploy-to-neocities).
 
-```yml name: Deploy to neocities
+```yml 
+name: Deploy to neocities
 on:
   schedule:
   - cron: '0 */4 * * *'
