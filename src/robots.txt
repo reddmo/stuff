@@ -27,3 +27,4 @@ User-agent: Timpibot
 User-agent: VelenPublicWebCrawler
 User-agent: YouBot
 Disallow: /
+Sitemap: https://stuffandthings.lol/sitemap.xml
