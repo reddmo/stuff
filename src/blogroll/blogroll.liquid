@@ -16,11 +16,10 @@ description: Blogroll
             {{ blog.cleansedUrl }}<br>
             {% if blog.latestPost and blog.latestPost.title %}
             <span style="color: var(--color-head); font-size: var(--font-size-l)">
-                <b>Latest post:</b>
-                <a style="text-decoration: none" href="{{ blog.latestPost.url | url }}" target="_blank" class="blogroll">
+                <b>Latest post:</b></span>
+                <a href="{{ blog.latestPost.url | url }}" target="_blank" class="blogpost">
                     {{ blog.latestPost.title }}
                 </a>
-            </span>
             {% endif %} 
         </li>
     
@@ -35,9 +34,22 @@ description: Blogroll
     text-decoration: none;
   }
   
+  .blogpost a {
+    text-decoration: underline solid 2px var(--color-link);
+    color: var(--color-text);
+  }
+  
   .blogroll:hover {
    outline: 1px solid var(--color-link-hover);
    background-color: var(--color-link-hover);
    color: var(--color-background);
    text-decoration: none;
   }
+  
+   .blogpost:hover {
+   outline: 1px solid var(--color-link-hover);
+   background-color: var(--color-link-hover);
+   color: var(--color-background);
+   text-decoration: none;
+  }
+</style>

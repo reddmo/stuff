@@ -5,7 +5,7 @@ layout: layouts/default.liquid
 <div class="main-section"> 
     {% assign tagList = collections | postTags %} {% if tagList.length > 0 %}
   <section>
-    <h1 class="posts" style="color: var(--color-text)">Tags</h1><br>
+    <h1 class="posts">Tags</h1><br>
  <div>   {%- for tag in tagList -%}
     <a href="/tags/{{ tag.name }}" class="articles-link menu">{{ tag.name }} ({{ tag.count }})</a>{% if
     forloop.last != true %}<span>   </span>{% endif %} {%- endfor -%}</div>
