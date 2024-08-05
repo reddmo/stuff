@@ -9,18 +9,18 @@
     background: 
     linear-gradient(135deg,
     var(--color-link),
-    var(--color-link) 5%,
-    var(--color-primary) 5%,
-    var(--color-primary) 10%,
-    var(--color-head) 10%,
-    var(--color-head) 15%,
-    var(--color-background) 15%,
-    var(--color-background) 85%,
-    var(--color-head) 85%,
-    var(--color-head) 90%,
-    var(--color-primary) 90%,
-    var(--color-primary) 95%,
-    var(--color-link) 95%)
+    var(--color-link) 3%,
+    var(--color-primary) 3%,
+    var(--color-primary) 6%,
+    var(--color-head) 6%,
+    var(--color-head) 9%,
+    var(--color-background) 9%,
+    var(--color-background) 91%,
+    var(--color-head) 91%,
+    var(--color-head) 94%,
+    var(--color-primary) 94%,
+    var(--color-primary) 97%,
+    var(--color-link) 97%);
   }
   
   .navbar nav {
@@ -46,7 +46,7 @@
   
   .link-home {
     list-style: none;
-    justify-content: center;
+    text-align: center;
     font-weight: bold;
     font-size: var(--font-size-xl);
     background-size: auto;
@@ -71,7 +71,7 @@
     border: .10px solid var(--color-background);
     color: var(--color-link);
     font-size: var(--font-size-xs);
-    min-width: 6ch;
+    min-width: 8ch;
     font-weight: bold;
     display: inline-block;
     margin-top: 10px;
@@ -113,9 +113,9 @@
 <header class="navbar">
   <nav>
     <div class="link-home">
-    <center><h1><svg height="76" width="350" xmlns="http://www.w3.org/2000/svg">
+    <h1><svg height="76" width="350" xmlns="http://www.w3.org/2000/svg">
     <text x="4" y="42" alignment-baseline="middle" fill="var(--color-link)" font-size="55">stuff<tspan alignment-baseline="middle" stroke="none" fill="var(--color-head)">&</tspan>things</text>
-	</svg></h1></center></div>
+	</svg></h1></div>
     <div class="navbar-links">
       <a href="/" aria-label="Back to home page" class="menu">home</a>
       <a href="/articles" aria-label="Blog articles" class="menu">blog</a>
@@ -123,9 +123,6 @@
       <a href="/now" aria-label="My Now page" class="menu">now</a>
       <a href="/blogroll" aria-label="The blogroll" class="menu">roll</a>
       <a href="/tag" aria-label="All of the post tags" class="menu">tags</a>
-      <a href="#footer" aria-label="Go to footer"><svg class="centered" width="25px" height="25px" alignment-baseline="auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
- <path d="M8 12L12 16M12 16L16 12M12 16V8M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
- </svg></a>
     </div>  
   </nav>
 </header>
