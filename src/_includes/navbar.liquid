@@ -9,18 +9,18 @@
     background: 
     linear-gradient(135deg,
     var(--color-link),
-    var(--color-link) 3%,
-    var(--color-primary) 3%,
-    var(--color-primary) 6%,
-    var(--color-head) 6%,
-    var(--color-head) 9%,
-    var(--color-background) 9%,
-    var(--color-background) 91%,
-    var(--color-head) 91%,
-    var(--color-head) 94%,
-    var(--color-primary) 94%,
-    var(--color-primary) 97%,
-    var(--color-link) 97%);
+    var(--color-link) 4%,
+    var(--color-primary) 4%,
+    var(--color-primary) 8%,
+    var(--color-head) 8%,
+    var(--color-head) 12%,
+    var(--color-background) 12%,
+    var(--color-background) 88%,
+    var(--color-head) 88%,
+    var(--color-head) 92%,
+    var(--color-primary) 92%,
+    var(--color-primary) 96%,
+    var(--color-link) 96%);
   }
   
   .navbar nav {
@@ -66,30 +66,6 @@
     text-align: center;
   }
 
-  .menu {
-    background-color: var(--color-background);
-    border: 1px solid var(--color-background);
-    color: var(--color-link);
-    font-size: var(--font-size-xs);
-    min-width: 8ch;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 10px;
-    text-transform: none;
-    box-shadow: 0px 4px 7px 0px var(--slate-10);
-    padding: 0.1rem var(--space-1);
-    text-align: center;
-  }
-
-  .menu:hover,
-  active {
-    color: var(--color-background);
-    background-color: var(--color-link-hover);
-    border: 1px solid var(--color-link-hover);
-  } 
-
-
-
   
 /* all buttons have a min size */
   .button:where(:not(:has(svg))) {
@@ -118,7 +94,7 @@
   <nav>
     <div class="link-home">
     <h1><svg height="76" width="350" xmlns="http://www.w3.org/2000/svg">
-    <text x="4" y="42" alignment-baseline="middle" fill="var(--color-link)" font-size="55">stuff<tspan alignment-baseline="middle" stroke="none" fill="var(--color-head)">&</tspan>things</text>
+    <text x="4" y="42" alignment-baseline="middle" fill="var(--color-link)" font-size="55">stuff<tspan alignment-baseline="middle" stroke="none" fill="var(--color-primary)">&</tspan><tspan alignment-baseline="middle" stroke="none" fill="var(--color-head)">things</text>
 	</svg></h1></div>
     <div class="navbar-links">
       <a href="/" aria-label="Back to home page" class="menu">home</a>
