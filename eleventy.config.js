@@ -10,7 +10,6 @@ const getSimilarTags = (categoriesA, categoriesB) => {
   return categoriesA.filter(Set.prototype.has, new Set(categoriesB)).length;
 };
 
-
 const getUniquePosts = (posts) => {
   const field = "url";
   const uniqueValues = new Set();
@@ -56,7 +55,7 @@ export default async function (eleventyConfig) {
 		}
 	}
   });
-               
+                 
   // Run Eleventy when these files change:
 
   // https://www.11ty.dev/docs/watch-serve/#add-your-own-watch-targets  
