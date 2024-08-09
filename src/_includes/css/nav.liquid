@@ -1,0 +1,91 @@
+<style>
+  .navbar {
+    width: auto;
+    padding: var(--space-3) var(--container-padding-sides);
+    margin: 0 auto;
+    display: flex;
+	top: 0; 
+    position: static;
+    background: 
+    linear-gradient(135deg,
+    var(--color-link),
+    var(--color-link) 4%,
+    var(--color-primary) 4%,
+    var(--color-primary) 8%,
+    var(--color-head) 8%,
+    var(--color-head) 12%,
+    var(--color-background) 12%,
+    var(--color-background) 88%,
+    var(--color-head) 88%,
+    var(--color-head) 92%,
+    var(--color-primary) 92%,
+    var(--color-primary) 96%,
+    var(--color-link) 96%);
+  }
+  
+  .navbar nav {
+    flex: 3;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    background-color: none !important;
+  } 
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+  
+  .link-home {
+    list-style: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: var(--font-size-xl);
+    background-size: auto;
+    background-repeat: repeat;
+    background-clip: text;
+    filter: drop-shadow(0px 2px 1px var(--color-box));
+  }
+  
+  .button {
+    background-color: transparent;
+    display: inline-block;
+    place-items: center;
+    align-items: center;
+    font: inherit;
+    padding: 0.1rem var(--space-1);
+    text-decoration: none !important;
+    text-align: center;
+  }
+
+  
+/* all buttons have a min size */
+  .button:where(:not(:has(svg))) {
+    text-align: center;
+    min-inline-size: 6ch;
+  }
+   
+/* @media (max-width: 1250px) {
+    .navbar-links > *:nth-child(1) {
+      width: 100%;
+    }
+    .navbar-links > *:nth-child(2) {
+      margin-left: unset;
+    }
+  } */
+  
+  .centered {
+  margin-top: -5px;
+  margin-left: 4px;
+  position: absolute;
+  }
+
+</style>

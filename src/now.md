@@ -4,6 +4,7 @@ permalink: /now/index.html
 description: What am I up to?
 layout: layouts/page.liquid
 youtube: true
+draft: true
 ---
 <div class="now">
 
@@ -46,5 +47,11 @@ youtube: true
    background-color: var(--color-link-hover);
    color: var(--color-background);
    text-decoration: none;
+   }
+   
+   .now list {
+   list-style-type: none !important;
+   padding: 0;
+   margin: 0;
    }
 </style>
