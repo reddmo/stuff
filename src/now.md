@@ -36,6 +36,11 @@ youtube: true
 </div>
 
 <style>
+  .now a {
+    color: currentColor;
+    text-decoration: underline solid 3px var(--color-link);
+  }
+
   .now a:hover {
    outline: 1px solid var(--color-link-hover);
    background-color: var(--color-link-hover);
