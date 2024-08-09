@@ -7,7 +7,7 @@ layout: layouts/default.liquid
   <section>
     <h1 class="posts">Tags</h1><br>
  <div>   {%- for tag in tagList -%}
-    <a href="/tags/{{ tag.name }}" class="articles-link menu">{{ tag.name }} ({{ tag.count }})</a>{% if
+    <a href="/tags/{{ tag.name }}" class="articles-link menu">{{ tag.name }}</a>{% if
     forloop.last != true %}<span>   </span>{% endif %} {%- endfor -%}</div>
   </section>
   {% endif %}

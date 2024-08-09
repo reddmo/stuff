@@ -2,7 +2,7 @@
 title: Updated to Eleventy 3.0.0-alpha.10
 description: A fairly painless update
 date: 2024-06-02
-tags: ['11ty alpha', '11ty']
+tags: ['11ty']
 ---
 So I know I missed the last few weeks of WeblogPoMo 2024. I thought I'd post on vacation but I just enjoyed it. It was great.
 

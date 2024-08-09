@@ -2,7 +2,7 @@
 title: WeblogPoMo Intro 2024
 description: A kickoff to my WeblogPoMo 2024 adventure
 date: 2024-05-01
-tags: ['weblogpomo2024', 'blogging']
+tags: ['weblogpomo2024', 'blog']
 ---
 I've been debating with myself about whether I was going to (try to) participate in WeblogPoMo2024. Did I need another commitment or deadline? Did I have anything to say everyday?
 

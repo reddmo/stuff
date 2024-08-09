@@ -2,7 +2,7 @@
 title: A Fresh Coat of Paint and a Move
 description: Refreshed and moved to Neocities
 date: 2024-06-09
-tags: ['11ty alpha', '11ty', 'neocities']
+tags: ['11ty', 'neocities']
 ---
 After the move to the [11ty 3.0.0 alpha](https://stuffandthings.lol/2024-06-02_eleventy_alpha/), I decided to do a little update on some of the design and colors. I added cards. I like cards. Don't @ me. I'll use them and I might even put cards in cards. Who knows.
 

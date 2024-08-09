@@ -2,7 +2,7 @@
 title: Blogging about Designing a Blog
 description: A circle
 date: 2024-06-22
-tags: ['blogging', 'designing', 'css', '11ty']
+tags: ['blog', 'design', 'css', '11ty']
 ---
 I realize most of my latest posts are either about designing this site or just about blogging in general. I'm ok with that right now. One of the things I've been working on is my CSS. I've been slowly working through and cleaning some of it up. 
 

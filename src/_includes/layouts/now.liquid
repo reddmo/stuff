@@ -1,0 +1,19 @@
+---
+layout: layouts/default.liquid
+---
+
+<header class="post-header">
+  <h1 class="post-title">{{ title }}</h1>
+  <div class="post-time">
+    <time datetime="{{ post.date }}">
+      {{ page.date | date : "%a, %b %d, %Y" }}
+    </time>
+  </div>
+</header>
+
+<section class="post-container">
+  {{ content }}
+</section>
+
+{% include "css/prism.liquid" %}
+{% include "css/posts.liquid" %}

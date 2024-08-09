@@ -2,7 +2,7 @@
 title: A website or a blog?
 description: Do I have a website to have a blog or a blog so I can design a website?
 date: 2024-02-19
-tags: ['blog', 'blogging', 'website', 'anxiety']
+tags: ['blog', 'website', 'anxiety']
 ---
 I’ve been thinking a lot about this site and this blog. First, I think I may have bloated some of the files and will be reviewing some of those over the next whatever: days, weeks. But that said, one of the things I realized as I continued to tinker with it was that I lost sight of the blog itself. 
 

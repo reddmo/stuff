@@ -2,7 +2,7 @@
 title: New Software in the Scheme of Things
 description: Some thoughts on software and other things
 date: 2024-07-07
-tags: ['software', 'the world']
+tags: ['software']
 ---
 If you read this with any regularity then you may know we went live with new Enterprise Resource Planning (ERP) software. Overall, the roll out went well. It is not without some continued challenges including people that just don't like or want change and want to tell me that, but I do think it went well. There are still some tweaks and fixes happening so it'll be some time yet before it's in a final state.
 

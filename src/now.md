@@ -2,56 +2,33 @@
 title: Now
 permalink: /now/index.html
 description: What am I up to?
-layout: layouts/page.liquid
+layout: layouts/now.liquid
 youtube: true
-draft: true
 ---
-<div class="now">
-
 ### What I’m reading
 
-- [The Three-Body Problem](https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel)) by [Liu Cixin](https://en.wikipedia.org/wiki/Liu_Cixin) 
-- [The Silmarillion](https://en.wikipedia.org/wiki/The_Silmarillion)
+[The Three-Body Problem](https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel)) by [Liu Cixin](https://en.wikipedia.org/wiki/Liu_Cixin)  
+[The Silmarillion](https://en.wikipedia.org/wiki/The_Silmarillion)
 
 ### What I’m watching
 
-- [Top Chef](https://en.wikipedia.org/wiki/Top_Chef) 
-- [Animal Control](https://en.wikipedia.org/wiki/Animal_Control_(TV_series))
-- [Will Trent](https://en.wikipedia.org/wiki/Will_Trent)
-- [The Chelsea Detective](https://en.wikipedia.org/wiki/The_Chelsea_Detective)
+[My Life is Murder](https://en.wikipedia.org/wiki/My_Life_Is_Murder)  
+[Futurama](https://en.wikipedia.org/wiki/Futurama)  
+[Will Trent](https://en.wikipedia.org/wiki/Will_Trent)  
+[The Chelsea Detective](https://en.wikipedia.org/wiki/The_Chelsea_Detective)  
 
 ### What I’m listening to (Spotify Links)
 
-- [Pedro the Lion - Santa Cruz](https://open.spotify.com/album/02AxKITp9gYzR5bmgq1tpR?si=J0fbnB4zS-amXHcUlOGpSQ)
-- [English Patient - This Could Be Texas](https://open.spotify.com/album/4gd3XcQ7dR37m8GimBfiYT?si=Af5YixskQWKgW-249y3UOg)
-- [Idles - Tangk](https://open.spotify.com/album/6U11VNHZAfYY3E9V4oFB2p?si=WJVcIUOWRAe6JBJwYar3ng)
+[Bedouine - Bedouine (Deluxe)](https://open.spotify.com/album/5xkDtosZAm6qiGyRFc6ocB?si=f3LgxfBGR7GyBwR7auivog)  
+[Clairo - Charm](https://open.spotify.com/album/1KNUCVXgIxKUGiuEB8eG0i?si=qsP3oR-7QmCtd9vnitSYEA)  
+[English Patient - This Could Be Texas](https://open.spotify.com/album/4gd3XcQ7dR37m8GimBfiYT?si=Af5YixskQWKgW-249y3UOg)  
+[Idles - Tangk](https://open.spotify.com/album/6U11VNHZAfYY3E9V4oFB2p?si=WJVcIUOWRAe6JBJwYar3ng)  
 
 ### What I’m making
 
-- TBD
+[Pickled Peppers](https://www.davidlebovitz.com/pickled-peppers/)   
 
 ### What I’m enjoying
 
-- Stuff
-- Things
-</div>
-
-<style>
-  .now a {
-    color: currentColor;
-    text-decoration: underline solid 3px var(--color-link);
-  }
-
-  .now a:hover {
-   outline: 1px solid var(--color-link-hover);
-   background-color: var(--color-link-hover);
-   color: var(--color-background);
-   text-decoration: none;
-   }
-   
-   .now list {
-   list-style-type: none !important;
-   padding: 0;
-   margin: 0;
-   }
-</style>
+Stuff  
+Things

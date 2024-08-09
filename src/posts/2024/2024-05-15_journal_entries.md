@@ -2,7 +2,7 @@
 title: A blog entry about journal entries
 description: Credit where it's due
 date: 2024-05-15
-tags: ['weblogpomo2024', 'journal entries', 'accounting']
+tags: ['weblogpomo2024', 'accounting']
 ---
 As we move through our software implementation also during May, which is WeblogPoMo, I am spending a lot of time thinking and talking about journal entries. But not the kind you're thinking of.
 

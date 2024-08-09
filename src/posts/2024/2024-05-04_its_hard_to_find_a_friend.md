@@ -2,7 +2,7 @@
 title: It's Hard to Find a Friend
 description: Music as I hear it
 date: 2024-05-04
-tags: ['weblogpomo2024', 'music', 'pedro the lion']
+tags: ['weblogpomo2024', 'music']
 ---
 I know the obvious post today would be something about Star Wars but I wasn't intentionally diverging from that.
 
