@@ -219,16 +219,6 @@
     font-size: var(--font-size-base);
     text-rendering: optimizeLegibility;
   }
-  a {
-    color: var(--color-text);
-    text-decoration: underline solid 3px var(--color-link);
-  }
-  
-  a:hover {
-    color: var(--color-text);
-    text-decoration: none;
-    transition: 100ms;
-  }
                 
   .linear {
     color: transparent;
@@ -332,5 +322,21 @@
   
   .highlight {
     background-color: #f7ca18;
+  }
+
+  a {
+    color: var(--color-text);
+    text-decoration-color: var(--color-link);
+    text-decoration-thickness: .125em;
+    text-underline-offset: 1.5px;
+            -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+  }
+  
+  a:hover {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: 100ms;
   }
 </style>
