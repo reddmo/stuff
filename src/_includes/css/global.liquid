@@ -117,7 +117,7 @@
     --gradient-rainbow: linear-gradient(90deg, #cf4662 10%, #fbbe25 30%, #62c95c 50%, #08bccb 75%, #a977d5 90%);
     --color-background: #ffffff;
     --color-background-shade: var(--slate-2);
-    --color-text: #4c4f69;
+    --color-text: var(--slate-13);
     --color-text-shade: #575650;
     --color-primary: var(--cyan-7);
     --color-link: #e31c3d;
@@ -125,7 +125,7 @@
     --color-head: #4c2c92;
     --color-date: #1c2833;
     --color-box: var(--slate-10);
-    --color-card: rgba(211, 26, 0, 0.1);
+    --color-card: var(--slate-1);
     --color-navbar-hover: var(--avocado-6);
     --gradient-linear: linear-gradient(-45deg,
     var(--color-text) 5%,
@@ -161,7 +161,7 @@
   [data-theme="dark"] {
     --color-background: var(--slate-15);
     --color-background-shade: var(--slate-13);
-    --color-text: #d2dee1;
+    --color-text: var(--slate-2);
     --color-text-shade: #989f9f;
     --color-primary: var(--red-accent);
     --color-link: var(--cyan-5);
@@ -169,6 +169,7 @@
     --color-head: #f7ca18;
     --color-box: var(--slate-4);
     --color-navbar-hover: var(--avocado-7);
+    --color-card: var(--slate-13);
     --gradient-linear: linear-gradient(-15deg,
     var(--color-text) 5%,
     var(--color-link) 30%,
@@ -310,9 +311,10 @@
     display: inline-block;
     margin-top: 10px;
     text-transform: none;
-    box-shadow: 0px 3px 5px 0px var(--color-box);
     padding: 0.1rem var(--space-1);
     text-align: center;
+    border: 2px solid var(--color-text);
+    border-radius: 6px;
   }
 
   .menu:hover {
