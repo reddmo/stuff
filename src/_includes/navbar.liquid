@@ -5,21 +5,6 @@
     margin: 0 auto;
     display: flex;
     position: relative;
-    background: 
-    linear-gradient(135deg,
-    var(--color-link),
-    var(--color-link) 4%,
-    var(--color-primary) 4%,
-    var(--color-primary) 8%,
-    var(--color-head) 8%,
-    var(--color-head) 12%,
-    var(--color-background) 12%,
-    var(--color-background) 88%,
-    var(--color-head) 88%,
-    var(--color-head) 92%,
-    var(--color-primary) 92%,
-    var(--color-primary) 96%,
-    var(--color-link) 96%);
   }
   
   .navbar nav {
@@ -31,19 +16,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-3);
+    gap: var(--space-4);
     flex-wrap: wrap;
+    text-transform: uppercase;
+    font-size: var(--font-size-base);
+    font-weight: semi-bold;
+    text-wrap: balance;
   }
   
+  .navbar-links > *:nth-child(2) {
+    margin-left: auto;
+  }
+
   .link-home {
-    list-style: none;
-    text-align: center;
     font-weight: bold;
     font-size: var(--font-size-xl);
-    background-size: auto;
-    background-repeat: repeat;
-    background-clip: text;
-    /* filter: drop-shadow(0px 2px 1px var(--color-box)); */
+    text-transform: lowercase;
+    font-family: var(--font-family);
   }
   
   .button {
@@ -64,12 +53,15 @@
     min-inline-size: 6ch;
   }
    
- @media (max-width: 1250px) {
+ @media (max-width: 850px) {
     .navbar-links > *:nth-child(1) {
-      width: auto;
+      width: 100%;
     }
     .navbar-links > *:nth-child(2) {
       margin-left: unset;
+    }
+    .link-home {
+      text-align: center;
     }
   } 
   
@@ -83,17 +75,17 @@
 <a id="top" name="top"></a>
 <header class="navbar">
   <nav>
-    <div class="link-home">
-    <h1><svg height="76" width="350" xmlns="http://www.w3.org/2000/svg">
-    <text x="4" y="42" alignment-baseline="middle" fill="var(--color-link)" font-size="55" stroke="var(--color-text)" stroke-width="2px">stuff<tspan alignment-baseline="middle" stroke="none" fill="var(--color-head)">&</tspan><tspan alignment-baseline="middle" fill="var(--color-primary)" stroke="var(--color-text)" stroke-width="2px">things</tspan></text>
-	</svg></h1></div>
-    <div class="navbar-links">
-      <a href="/" aria-label="Back to home page" class="menu">home</a>
-      <a href="/articles" aria-label="Blog articles" class="menu">blog</a>
-      <a href="/about" aria-label="About me page" class="menu">about</a>
-      <a href="/now" aria-label="The Now Page" class="menu">now</a>
-      <a href="/blogroll" aria-label="The blogroll" class="menu">roll</a>
-      <a href="/tag" aria-label="All of the post tags" class="menu">tags</a>
-    </div>  
+    <ul class="navbar-links">
+     <li class="link-home">
+    <h1><svg height="76" width="340" xmlns="http://www.w3.org/2000/svg">
+    <text x="4" y="42" alignment-baseline="middle" fill="var(--color-link)" font-size="53" stroke="var(--color-text)" stroke-width="2px">stuff<tspan alignment-baseline="middle" stroke="none" fill="var(--color-head)">&</tspan><tspan alignment-baseline="middle" fill="var(--color-primary)" stroke="var(--color-text)" stroke-width="2px">things</tspan></text>
+	</svg></h1></li>
+      <li><a href="/" aria-label="Back to home page">home</a></li>
+      <li><a href="/articles" aria-label="Blog articles">blog</a></li>
+      <li><a href="/about" aria-label="About me page">about</a></li>
+      <li><a href="/now" aria-label="The Now Page">now</a></li>
+      <li><a href="/blogroll" aria-label="The blogroll">roll</a></li>
+      <li><a href="/tag" aria-label="All of the post tags">tags</a></li>
+    </ul>  
   </nav>
 </header>
