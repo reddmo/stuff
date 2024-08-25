@@ -51,6 +51,7 @@ if similar.length > 0 %}
   .post-title {
     font-weight: bolder;
   }
+
   .post-time {
     color: var(--color-text-shade);
     font-size: var(--font-size-xs);
@@ -67,10 +68,10 @@ if similar.length > 0 %}
   }
   
   .post-container a:hover {
-    color: var(--color-text);
-    text-decoration-color: var(--color-link-hover);
-    text-decoration-thickness: .200em;
-    text-underline-offset: 4px;
+   outline: 1px solid var(--color-link-hover);
+   background-color: var(--color-link-hover);
+   color: var(--color-background);
+   text-decoration: none;
    }
 
   .post-container h2 {

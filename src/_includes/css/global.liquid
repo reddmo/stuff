@@ -135,7 +135,7 @@
 
     --font-family: -apple-system, BlinkMacSystemFont, "Inter", "IBM Plex Sans",
       Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
-      Segoe UI Symbol, mono;
+      Segoe UI Symbol;
 
     --container-max-size: 100ch;
     --container-padding-sides: var(--space-4);
@@ -316,13 +316,14 @@
     text-transform: none;
     padding: 0.1rem var(--space-1);
     text-align: center;
-    border: 2px solid var(--color-text);
+    border: 2px solid var(--color-link-hover);
     border-radius: 6px;
   }
 
   .menu:hover {
     color: var(--color-background);
     background-color: var(--color-link-hover) !important;
+    border: 2px solid var(--color-link);
   } 
   
   .highlight {
