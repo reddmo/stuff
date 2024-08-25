@@ -116,13 +116,14 @@
 
     --gradient-rainbow: linear-gradient(90deg, #cf4662 10%, #fbbe25 30%, #62c95c 50%, #08bccb 75%, #a977d5 90%);
     --color-background: #ffffff;
-    --color-background-shade: var(--slate-2);
+    --color-background-shade: var(--slate-1);
     --color-text: var(--slate-13);
     --color-text-shade: #575650;
     --color-primary: var(--cyan-7);
     --color-link: #e31c3d;
     --color-link-hover: var(--cyan-7);
     --color-head: #4c2c92;
+    --color-toggle: #ffa500;
     --color-date: #1c2833;
     --color-box: var(--slate-10);
     --color-card: var(--slate-1);
@@ -160,13 +161,14 @@
   }
   [data-theme="dark"] {
     --color-background: var(--slate-15);
-    --color-background-shade: var(--slate-13);
+    --color-background-shade: var(--slate-12);
     --color-text: var(--slate-2);
     --color-text-shade: #989f9f;
     --color-primary: var(--red-accent);
     --color-link: var(--cyan-5);
     --color-link-hover: rgba(246,36,89);
     --color-head: #f7ca18;
+    --color-toggle: #f7ca18;
     --color-box: var(--slate-4);
     --color-navbar-hover: var(--avocado-7);
     --color-card: var(--slate-13);
@@ -261,8 +263,8 @@
   pre {
     padding: var(--space-4);
     font-size: var(--font-size-xs);
-    background: var(--color-background);
-    --prism-background: var(--color-background);
+    background: var(--color-background-shade);
+    --prism-background: var(--color-background-shade);
     --prism-font-size: var(--font-size-xs);
     margin: var(--space-2);
     padding: var(--space-3);
@@ -334,13 +336,13 @@
     color: var(--color-text);
     text-decoration-color: var(--color-link);
     text-decoration-thickness: .200em;
-    text-underline-offset: 4px;
+    text-underline-offset: 6px;
   }
   
   a:hover {
     color: var(--color-text);
     text-decoration-color: var(--color-link-hover);
     text-decoration-thickness: .200em;
-    text-underline-offset: 4px;
+    text-underline-offset: 8px;
   }
 </style>
