@@ -29,11 +29,10 @@ export default async function (eleventyConfig) {
     "./public/": "/",
   });
   
-  eleventyConfig.addPassthroughCopy("src/assets/fonts");
-    
-  eleventyConfig.addPassthroughCopy("src/img");
-  
-  eleventyConfig.addPassthroughCopy("src/robots.txt");  
+  eleventyConfig.addWatchTarget("src/assets/fonts");    
+  eleventyConfig.addWatchTarget("src/img");  
+  eleventyConfig.addWatchTarget("src/robots.txt");
+  eleventyConfig.addWatchTarget("src/assets/css");   
 
   eleventyConfig.addPlugin(codeStyleHooks, {
     lineNumbers: false,
