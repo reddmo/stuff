@@ -28,6 +28,8 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./public/": "/",
   });
+  
+  eleventyConfig.addPassthroughCopy("src/assets/fonts");
     
   eleventyConfig.addPassthroughCopy("src/img");
   

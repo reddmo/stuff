@@ -4,6 +4,26 @@
     margin: 0;
     line-height: calc(1em + 0.75rem);
   }
+
+.inclusive-sans-regular {
+  font-family: "Inclusive Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inclusive-sans-regular-italic {
+  font-family: "Inclusive Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+  @font-face {
+	font-family: "Departure";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/assets/fonts/DepartureMono-Regular.woff2") format("woff2");
+	font-display: swap;
+  }
     
   html { 
   	--slate-1: #f7f9f9;
@@ -181,27 +201,32 @@
     
   h1 {
     font-size: var(--font-size-xxl);
+    font-family: var(--font-family);
     color: var(--color-head);
     font-weight: bolder;    
   }
   h1.posts {
     font-size: var(--font-size-xxl);
+    font-family: var(--font-family);
     color: var(--color-link);
     font-weight: bolder;
   }    
   h2 {
     font-size: var(--font-size-xl);
+    font-family: var(--font-family);
     color: var(--color-head);
     font-weight: medium;
     margin-bottom: var(--space-2);
   }
   h2.posts {
     font-size: var(--font-size-xl);
+    font-family: var(--font-family);
     color: var(--color-primary);
     font-weight: medium;
   } 
   h3 {
     font-size: var(--font-size-l);
+    font-family: var(--font-family);
     color: var(--color-head);
     font-weight: medium;
     margin-bottom: var(--space-2);
@@ -210,16 +235,17 @@
   h5,
   h6 {
     font-size: var(--font-size-base);
+    font-family: var(--font-family);
     color: var(--color-head);
     font-weight: medium;
     margin-bottom: var(--space-2);
   }
     
   body {
-    font-family: var(--font-family);
+    font-family: "Departure";
     color: var(--color-text);
     background-color: var(--color-background);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-s);
     text-rendering: optimizeLegibility;
   }
                 
@@ -263,6 +289,7 @@
   pre {
     padding: var(--space-4);
     font-size: var(--font-size-xs);
+    font-family: "Departure";
     background: var(--color-background-shade);
     --prism-background: var(--color-background-shade);
     --prism-font-size: var(--font-size-xs);
@@ -275,6 +302,7 @@
   
   code {
     font-size: var(--font-size-xs);
+    font-family: "Departure";
     white-space: pre-wrap;
     word-spacing: normal;
     word-break: normal;
