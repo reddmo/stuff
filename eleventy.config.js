@@ -29,9 +29,9 @@ export default async function (eleventyConfig) {
     "./public/": "/",
   });
   
-  eleventyConfig.addWatchTarget("src/assets/fonts");    
+  eleventyConfig.addPassthroughCopy("src/assets/fonts");    
   eleventyConfig.addWatchTarget("src/img");  
-  eleventyConfig.addWatchTarget("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addWatchTarget("src/assets/css");   
 
   eleventyConfig.addPlugin(codeStyleHooks, {
