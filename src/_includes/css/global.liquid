@@ -136,7 +136,7 @@
 
     --gradient-rainbow: linear-gradient(90deg, #cf4662 10%, #fbbe25 30%, #62c95c 50%, #08bccb 75%, #a977d5 90%);
     --color-background: #ffffff;
-    --color-background-shade: var(--slate-1);
+    --color-background-shade: #fcfdfd;
     --color-text: var(--slate-13);
     --color-text-shade: #575650;
     --color-primary: var(--cyan-7);
@@ -146,7 +146,7 @@
     --color-toggle: #ffa500;
     --color-date: #1c2833;
     --color-box: var(--slate-10);
-    --color-card: var(--slate-1);
+    --color-card: #fcfdfd;
     --color-navbar-hover: var(--avocado-6);
     --gradient-linear: linear-gradient(-45deg,
     var(--color-text) 5%,
@@ -198,7 +198,10 @@
     var(--color-head) 30%,
     var(--color-primary) 95%);
   }
-    
+
+  .flow > * + * {
+	margin-block-start: var(--flow-space, 1em);
+  }    
   h1 {
     font-size: var(--font-size-xxl);
     font-family: var(--font-family);
