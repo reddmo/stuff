@@ -63,7 +63,7 @@ export default async function (eleventyConfig) {
 
   // Watch content images for the image pipeline.
   
-  eleventyConfig.addWatchTarget("src/**/*.{svg,webp,png,jpeg}");
+  eleventyConfig.addWatchTarget("src/img/*.{svg,webp,png,jpeg}");
 
   eleventyConfig.addFilter("postTags", (tags) => {
     return Object.keys(tags)
