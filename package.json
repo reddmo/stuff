@@ -18,14 +18,14 @@
   "author": "Diego López",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0-beta.2",
+    "@11ty/eleventy": "^3.0.0",
     "eleventy-plugin-code-style-hooks": "^2.0.2",
     "eleventy-plugin-og-image": "^4.0.0-beta.7",
     "eleventy-plugin-webmentions": "^2.1.0"
   },
   "dependencies": {
     "@11ty/eleventy-fetch": "^4.0.1",
-    "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy-img": "^5.0.0",
     "@11ty/eleventy-plugin-rss": "^2.0.1",
     "dayjs": "^1.11.11",
     "dotenv": "^16.4.5",
