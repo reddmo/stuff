@@ -18,7 +18,7 @@
   "author": "Diego López",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0-beta.1",
+    "@11ty/eleventy": "^3.0.0-beta.2",
     "eleventy-plugin-code-style-hooks": "^2.0.2",
     "eleventy-plugin-og-image": "^4.0.0-beta.7",
     "eleventy-plugin-webmentions": "^2.1.0"
