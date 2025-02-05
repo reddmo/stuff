@@ -1,5 +1,5 @@
 ---
-title: Quesions About the Blog
+title: Questions About the Blog
 description: Answering some of the questions I've seen
 date: 2025-02-05
 draft: false

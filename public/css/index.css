@@ -194,15 +194,16 @@ li {
 
 a[href] {
 	color: var(--text-color); 
+	position: relative;
 	text-decoration-color: var(--text-color-link);
-	text-decoration-thickness: .150em;
+	text-decoration-thickness: .200em;
 	text-decoration-style: solid;
-	text-underline-offset: .08rem;
+	text-underline-offset: .10rem;
 }
 a[href]:visited {
 	color: var(--text-color); 
 	text-decoration-color: var(--text-color-link-visited);
-	text-decoration-thickness: .150em;
+	text-decoration-thickness: .200em;
 	text-decoration-style: solid;
 	text-underline-offset: .10rem;
 }
@@ -210,7 +211,7 @@ a[href]:hover,
 a[href]:active {
 	color: var(--text-color);
 	text-decoration-color: var(--text-color-link-active);
-	text-decoration-thickness: .150em;
+	text-decoration-thickness: .200em;
 	text-decoration-style: solid;
 	text-underline-offset: .16rem;
 }
@@ -299,7 +300,10 @@ code {
 	font-family: 'Departure';
 }
 pre {
-	border: 3px solid var(--text-color-link);
+	border: .500em solid;
+	border-image-slice: 1;
+	border-width: .250em;
+	border-image-source: linear-gradient(var(--text-color-link-active),var(--text-color-link),var(--text-color-link-visited));
 }
 pre:not([class*="language-"]) {
 	margin: .5em 0;
@@ -393,14 +397,14 @@ header {
 .nav-item a[href]:not(:hover) {
 	color: var(--text-color) !important; 
 	text-decoration-color: var(--text-color-link);
-	text-decoration-thickness: .150em;
+	text-decoration-thickness: .200em;
 	text-decoration-style: solid;
 	text-underline-offset: .10rem;
 }
 
 .nav-item a[href][aria-current="page"] {
 	color: var(--text-color-active) !important; 
-	text-decoration-thickness: .150em;
+	text-decoration-thickness: .200em;
 	text-decoration-style: solid;
 	text-underline-offset: .16rem;
 	font-weight: 900;
@@ -460,7 +464,7 @@ header {
 	justify-content: center;
 	text-transform: uppercase;
 	text-decoration-color: var(--text-color-link);
-	text-decoration-thickness: .150em;
+	text-decoration-thickness: .200em;
 	text-decoration-style: solid;
 	text-underline-offset: .10rem;
 }
