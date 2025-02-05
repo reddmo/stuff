@@ -142,6 +142,7 @@ h1 {
 
 h2 {
 	font-size: var(--font-size-lg);
+	color: var(--text-color-link);
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
