@@ -223,11 +223,12 @@ blockquote {
 
 button {
 	display: inline-block;
-	background-color: var(--text-color-link-active) !important;
-	color: var(--background-color);
-	border-radius: 4px;
-	padding: 4px;
-	border: 3px solid var(--text-color-link-active);
+	background: linear-gradient(var(--background-color),var(--background-color)) padding-box,
+				linear-gradient(45deg, var(--text-color-link-active),var(--text-color-link),var(--text-color-link-visited)) border-box !important;
+	color: var(--text-color);
+	padding: 5px;
+	border: 3px solid transparent;
+	border-radius: 50px;
 	place-items: center;
 	font-size: inherit;
 	font-family: var(--font-family);
@@ -242,9 +243,8 @@ button a {
 
 button:hover,
 button:focus {
-	background-color: var(--text-color-link) !important;
-	color: var(--background-color);
-	border: 3px solid var(--text-color-link);
+	background: linear-gradient(var(--background-color),var(--background-color)) padding-box,
+				linear-gradient(45deg, var(--text-color-link-visited),var(--text-color-link),var(--text-color-link-active)) border-box !important;
 }
 
 main,
