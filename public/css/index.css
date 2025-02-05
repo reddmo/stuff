@@ -104,13 +104,16 @@
 
 html {
 	color-scheme: light dark;
+	border: .300em solid;
+	border-image-slice: 1;
+	border-width: .175em;
+	border-image-source: linear-gradient(var(--text-color-link-active),var(--text-color-link),var(--text-color-link-visited));
 }
 
 html,
 body {
 	padding: 0;
 	margin: 0 auto;
-
 	color: var(--text-color); 
 	background-color: var(--background-color);
 	text-wrap: pretty;
@@ -261,7 +264,6 @@ header:after {
 	display: table;
 	clear: both;
 }
-
 .links-nextprev {
 	font-family: var(--font-family);
 }
