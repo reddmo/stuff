@@ -243,8 +243,9 @@ button a {
 
 button:hover,
 button:focus {
-	background: linear-gradient(var(--background-color),var(--background-color)) padding-box,
+	background: linear-gradient(var(--text-color),var(--text-color)) padding-box,
 				linear-gradient(45deg, var(--text-color-link-visited),var(--text-color-link),var(--text-color-link-active)) border-box !important;
+	color: var(--background-color) !important;
 }
 
 main,
