@@ -7,6 +7,7 @@ export default {
 	githubUrl: "https://github.com/reddmo",
 	blueskyUrl: "https://bsky.app/profile/jasonmoser.bsky.social",
 	rssUrl: "/feed/feed.xml",
+	webmentions: "stuffandthings.lol",
 	author: {
 		name: "Jason",
 		email: "jasonm@omg.lol",
