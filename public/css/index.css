@@ -337,7 +337,7 @@ header {
 	justify-content: space-between;
 	/* flex-wrap: wrap; */
 	align-items: center;
-	padding: 1em;
+	padding: 1.25rem;
 }
 
 .card {
@@ -390,7 +390,7 @@ header {
 
 .nav-item {
 	display: inline-block;
-	margin: 8px;
+	margin: 6px;
 	font-weight: 400;
 }
 
