@@ -79,8 +79,23 @@
 
 		<header>
 			<a href="/" class="home-link" aria-label="Home"><svg height="79" width="371" xmlns="http://www.w3.org/2000/svg">
-    <text x="0" y="48" alignment-baseline="middle" font-family="var(--font-family)" fill="var(--text-color-link)" font-size="1.25em" stroke="none" stroke-width="2px">stuff<tspan alignment-baseline="middle" stroke="none" fill="var(--text-color-link-active)">&</tspan><tspan alignment-baseline="middle" fill="var(--text-color-link-visited)" stroke="none" stroke-width="2px">things</tspan></text>
-	<text x="3" y="44" alignment-baseline="middle" font-family="var(--font-family)" fill="var(--text-color-link-visited)" font-size="1.25em" stroke="var(--color-gray-50)" stroke-width="2" paint-order="stroke fill">stuff<tspan alignment-baseline="middle" stroke="var(--color-gray-50)" stroke-width="2" fill="var(--text-color-link)" paint-order="stroke fill">&</tspan><tspan alignment-baseline="middle" fill="var(--text-color-link-active)" stroke="var(--color-gray-50)" stroke-width="2" paint-order="stroke fill">things</tspan></text>
+				<defs>
+					<linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+						<stop offset="0%" style="stop-color:var(--text-color-link)"/>
+						<stop offset="50%" style="stop-color:var(--text-color-link-visited)"/>
+						<stop offset="100%" style="stop-color:var(--text-color-link-active)"/>
+					</linearGradient>
+				</defs>
+				<text x="0" y="48" alignment-baseline="middle" font-family="var(--font-family)" font-size="var(--font-size-xxl)" fill="url(#textGradient)">stuff&things</text>
+			
+				<defs>
+					<linearGradient id="textGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+						<stop offset="0%" style="stop-color:var(--text-color-link-active)"/>
+						<stop offset="50%" style="stop-color:var(--text-color-link)"/>
+						<stop offset="100%" style="stop-color:var(--text-color-link-visited)"/>
+					</linearGradient>
+				</defs>
+				<text x="3" y="44" alignment-baseline="middle" font-family="var(--font-family)" font-size="var(--font-size-xxl)" fill="url(#textGradient2)">stuff&things</text>
 	</svg></a>
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
 			<nav>
