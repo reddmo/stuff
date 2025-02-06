@@ -196,14 +196,14 @@ a[href] {
 	color: var(--text-color); 
 	position: relative;
 	text-decoration-color: var(--text-color-link);
-	text-decoration-thickness: .200em;
+	text-decoration-thickness: .175em;
 	text-decoration-style: solid;
 	text-underline-offset: .10rem;
 }
 a[href]:visited {
 	color: var(--text-color); 
 	text-decoration-color: var(--text-color-link-visited);
-	text-decoration-thickness: .200em;
+	text-decoration-thickness: .175em;
 	text-decoration-style: solid;
 	text-underline-offset: .10rem;
 }
@@ -211,7 +211,7 @@ a[href]:hover,
 a[href]:active {
 	color: var(--text-color);
 	text-decoration-color: var(--text-color-link-active);
-	text-decoration-thickness: .200em;
+	text-decoration-thickness: .175em;
 	text-decoration-style: solid;
 	text-underline-offset: .16rem;
 }
@@ -259,7 +259,7 @@ main :first-child {
 } 
 
 header {
-	border-bottom: .200em solid var(--header-bottom);
+	border-bottom: .175em solid var(--header-bottom);
 }
 header:after {
 	content: "";
@@ -278,7 +278,7 @@ header:after {
 	padding: 1em 0;
 }
 .links-nextprev {
-	border-top: .200em solid var(--header-bottom);
+	border-top: .175em solid var(--header-bottom);
 }
 .links-nextprev > * {
 	flex-grow: 1;
@@ -397,14 +397,14 @@ header {
 .nav-item a[href]:not(:hover) {
 	color: var(--text-color) !important; 
 	text-decoration-color: var(--text-color-link);
-	text-decoration-thickness: .200em;
+	text-decoration-thickness: .175em;
 	text-decoration-style: solid;
 	text-underline-offset: .10rem;
 }
 
 .nav-item a[href][aria-current="page"] {
 	color: var(--text-color-active) !important; 
-	text-decoration-thickness: .200em;
+	text-decoration-thickness: .175em;
 	text-decoration-style: solid;
 	text-underline-offset: .16rem;
 	font-weight: 900;
@@ -450,7 +450,7 @@ header {
 	padding-right: .5em;
 	text-underline-position: from-font;
 	text-underline-offset: 0.10rem;
-	text-decoration-thickness: .200em;
+	text-decoration-thickness: .175em;
 	text-wrap: pretty;
 }
 .postlist-item-active .postlist-link {
@@ -464,7 +464,7 @@ header {
 	justify-content: center;
 	text-transform: uppercase;
 	text-decoration-color: var(--text-color-link);
-	text-decoration-thickness: .200em;
+	text-decoration-thickness: .175em;
 	text-decoration-style: solid;
 	text-underline-offset: .10rem;
 }
