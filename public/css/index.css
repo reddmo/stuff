@@ -337,7 +337,7 @@ header {
 	justify-content: space-between;
 	/* flex-wrap: wrap; */
 	align-items: center;
-	padding: 1.25rem;
+	padding: .750rem;
 }
 
 .card {
