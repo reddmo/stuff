@@ -101,6 +101,13 @@
 @view-transition {
 	navigation: auto;
 }
+
+heading-anchors:not(:defined) :is(h2,h3,h4,h5,h6):after {
+	content: "#";
+	padding: 0 .25em;
+	opacity: 0;
+}
+
 html {
 	color-scheme: light dark;
 	/* border: .300em solid;
