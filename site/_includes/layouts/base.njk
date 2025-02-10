@@ -95,10 +95,11 @@
 						<stop offset="100%" style="stop-color:var(--text-color-link-visited)"/>
 					</linearGradient>
 				</defs>
-				<text x="3" y="42" alignment-baseline="middle" font-family="var(--font-family)" font-size="3.75rem" stroke="var(--background-color)" stroke-width="5.5px" paint-order="stroke fill" fill="url(#textGradient2)">stuff&things</text>
+				<text x="3" y="42" alignment-baseline="middle" font-family="var(--font-family)" font-size="3.75rem" stroke="var(--text-color)" stroke-width="3.5px" paint-order="stroke fill" fill="url(#textGradient2)">stuff&things</text>
 	</svg></a>
+
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav>
+			<nav id="mainnav">
 				<h2 class="visually-hidden">Top level navigation menu</h2>
 				<ul class="nav">
 				{%- for entry in collections.all | eleventyNavigation %}
