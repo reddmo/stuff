@@ -179,7 +179,6 @@ const md = markdownit(opt)
     return stats.jpeg[0].url; // Return the URL of the processed image
   }
 }
-
 export const config = {
   templateFormats: [
     "md",
