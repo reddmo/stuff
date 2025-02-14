@@ -5,7 +5,7 @@ date: 2025-02-05
 draft: false
 tags:
  - blog
-image: openg.png
+image: stuffopen.png
 ---
 I've seen the posts going around for the blogging challenges and enjoyed reading the responses. I decided to answer some of them myself to spur myself to write something, which I suspect is the reason for the challenge in the first place.
 
