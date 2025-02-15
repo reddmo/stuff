@@ -6,6 +6,7 @@ draft: false
 tags:
  - blog
  - new year
+image: stuffthings.png
 ---
 2025 has begun. It started on a bit of a slow note as I entered it sick. It was a cold or flu that knocked me down for a few days as much as I tried to avoid being outside in public in the lead up to the holidays. It wasn't COVID but I still lost my sense of taste and smell for a few days and that was disorienting. 
 

@@ -6,7 +6,7 @@ draft: false
 tags:
  - og-image
  - 11ty
-image: stuffopen.png
+image: stuffthings.png
 ---
 > [!NOTE]
 > 02/13/2025
