@@ -179,7 +179,7 @@ picture {
 	margin-top: 0;
 	margin-bottom: 0;
 	align-content: center;
-	display: inline;
+	display: block;
 }
 
 p:last-child {

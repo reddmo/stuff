@@ -18,6 +18,8 @@ import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import fs from 'fs';
 import path from 'node:path';
 import Image from '@11ty/eleventy-img';
+import dayjs from 'dayjs';
+import sanitizeHTML from 'sanitize-html';
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
@@ -79,7 +81,6 @@ const md = markdownit(opt)
   });
 
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
-
 
   // Atom Feed Plugin
   eleventyConfig.addPlugin(feedPlugin, {
@@ -150,6 +151,10 @@ const md = markdownit(opt)
     return (new Date()).toISOString();
   });
 
+  // Webmentions
+  eleventyConfig.addFilter("webmentionsByUrl", webmentionsByUrl);
+  eleventyConfig.addFilter("plainDate", plainDate);
+
   // Lucide icons shortcode
   eleventyConfig.addShortcode("lucide", function(eleventyLucideicons) { /* … */ });
 
@@ -179,6 +184,65 @@ const md = markdownit(opt)
     return stats.jpeg[0].url; // Return the URL of the processed image
   }
 }
+
+// Convert a date string to ISO string using dayjs
+export const toISOString = dateString => dayjs(dateString).toISOString();
+
+// Filter and sort webmentions by URL, and sanitize HTML content
+export const webmentionsByUrl = (webmentions, url) => {
+  const allowedTypes = {
+    likes: ["like-of"],
+    reposts: ["repost-of"],
+    comments: ["mention-of", "in-reply-to"],
+  };
+
+  const sanitize = (entry) => {
+    if (entry.content && entry.content.html) {
+      entry.content = sanitizeHTML(entry.content.html, {
+        allowedTags: ["b", "i", "em", "strong", "a"],
+      });
+    }
+    return entry;
+  };
+
+  const pageWebmentions = webmentions
+    .filter(
+      (mention) => mention["wm-target"] === "https://stuffandthings.lol" + url
+    )
+    .sort((a, b) => new Date(b.published) - new Date(a.published))
+    .map(sanitize);
+
+  const likes = pageWebmentions
+    .filter((mention) => allowedTypes.likes.includes(mention["wm-property"]))
+    .filter((like) => like.author)
+    .map((like) => like.author);
+
+  const reposts = pageWebmentions
+    .filter((mention) => allowedTypes.reposts.includes(mention["wm-property"]))
+    .filter((repost) => repost.author)
+    .map((repost) => repost.author);
+
+  const comments = pageWebmentions
+    .filter((mention) => allowedTypes.comments.includes(mention["wm-property"]))
+    .filter((comment) => {
+      const { author, published, content } = comment;
+      return author && author.name && published && content;
+    });
+
+  const mentionCount = likes.length + reposts.length + comments.length;
+  const data = { likes, reposts, comments, mentionCount };
+  return data;
+};
+
+
+// Create a plain date from an ISO date for webmentions
+export const plainDate = (isoDate) => {
+  let date = new Date(isoDate);
+  let options = { year: "numeric", month: "long", day: "numeric" };
+  let formattedDate = date.toLocaleDateString("en-US", options);
+  return formattedDate;
+};
+
 export const config = {
   templateFormats: [
     "md",
