@@ -1,6 +1,9 @@
 .webmentions {
+    display: flex;
     margin-block-start: 0;
     color: var(--text-color-link-active);
+    justify-content: center;
+    align-items: center;
   }
 
   .webmentions :first-child {
@@ -19,6 +22,16 @@
   
   .mention-image:is(:hover, :focus) {
     border: 2px solid var(--text-color-link-active);
+  }
+
+  .svg-icon {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+
+  .svg-icon.svg-baseline svg {
+    top: .125em;
+    position: relative;
   }
 
   .comment {

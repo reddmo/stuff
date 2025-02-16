@@ -1,8 +1,8 @@
 {%- css %}{% include "public/css/webmentions.css" %}{% endcss %}
 
-<div class="webmentions likes" id="webmentions">
+<div class="webmentions" id="webmentions">
     {% if mentions.comments %}
-    <h4>{{ mentions.comments | length }} <svg
+    <h3>{{ mentions.comments | length }}&nbsp; <div class="svg-icon"><svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
@@ -17,8 +17,8 @@
       >
         <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
         <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" /> 
-      </svg>
-      {{ mentions.likes | length }} <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2" role="img" aria-label="Likes"> <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path></svg>
-      {{ mentions.reposts | length }} <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2" role="img" aria-label="Mentions"> <path d="M8 9h8"></path> <path d="M8 13h6"></path> <path d="M13 18l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v6"></path> <path d="M16 22l5 -5"></path> <path d="M21 21.5v-4.5h-4.5"></path> </svg></h4>
+      </svg></div>&emsp;
+      <div class="svg-icon">{{ mentions.likes | length }}&nbsp; <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2" role="img" aria-label="Likes"> <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path></svg></div>&emsp;
+      <div class="svg-icon">{{ mentions.reposts | length }}&nbsp; <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2" role="img" aria-label="Mentions"> <path d="M8 9h8"></path> <path d="M8 13h6"></path> <path d="M13 18l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v6"></path> <path d="M16 22l5 -5"></path> <path d="M21 21.5v-4.5h-4.5"></path> </svg></div></h3>
     {% endif %}
     </div>
