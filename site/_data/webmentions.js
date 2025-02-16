@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 export default async function () {
 const WEBMENTIONS = process.env.WEBMENTION_IO_TOKEN;
-const url = `https://webmention.io/api/mentions.jf2?token=${WEBMENTIONS}&per-page=900`;
+const url = `https://webmention.io/api/mentions.jf2?token=${WEBMENTIONS}`;
 const res = await EleventyFetch(url, {
     duration: "1h",
     type: "json",
