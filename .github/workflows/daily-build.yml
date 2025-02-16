@@ -10,3 +10,4 @@ jobs:
       run: curl -s -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${TOKEN}"
       env:
         TOKEN: ${{ secrets.NETLIFY_BUILD_HOOK_DAILY }}
+        WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
