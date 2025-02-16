@@ -18,7 +18,7 @@ layout: layouts/base.njk
 
 {% set mentions = webmentions.mentions | webmentionsByUrl(page.url) %}
 {% if  mentions.mentionCount > 0 %}
-  {% include 'webmentions.njk' %}
+{% include './webmentions.njk' %}
 {% endif %}
 
 {%- if collections.posts %}
