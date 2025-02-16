@@ -1,10 +1,10 @@
 .webmentions {
-    grid-column: popout;
-    margin-block-start: var(--space-4);
+    margin-block-start: 0;
+    color: var(--text-color-link-active);
   }
 
   .webmentions :first-child {
-    margin-top: 0.5rem;
+    margin-top: 0;
     margin-bottom: 0;
   } 
   
@@ -13,7 +13,7 @@
     border-radius: 15px !important;
     height: 3em !important;
     width: 3em !important;
-    margin-bottom: var(--space-4);
+    margin-bottom: 0;
     /* box-shadow: 0px 7px 11px 0px var(--color-gray-90); */
   }
   
@@ -56,17 +56,17 @@
     justify-self: left;
     margin-left: 0.5rem;
     line-height: 1;
-    color: var(--text-color-link-visited);
+    color: var(--text-color-link-active);
   }
   
   .likes,
   .reposts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(3.4rem, max-content));
+    display: inline;
+    /* grid-template-columns: repeat(auto-fit, minmax(3.4rem, max-content));
     grid-gap: 2rem;
-    flex-wrap: wrap;
-    margin-block-end: var(--space-3);
-    row-gap: var(--space-1);
+    flex-wrap: wrap; */
+    margin-block-end: 0;
+    /* row-gap: var(--space-1); */
   }
   
   .likes a:has(img),
