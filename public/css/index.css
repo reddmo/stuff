@@ -56,8 +56,8 @@
     --code-color: light-dark(#1a1a1a, #ffffff);
     
     /* Headers - bold primary colors */
-    --heading: light-dark(#c41e3a, #ffd700);
-    --heading-shadow: light-dark(#0047ab, #4c9aff);
+    --heading: light-dark(#d65d0e, #ffd700);
+    --heading-shadow: light-dark(#b22222, #4c9aff);
     --header-bottom: light-dark(#f0f4f8, #1a2147);
     
     /* Button - maintained for contrast */
@@ -150,10 +150,10 @@ h6 {
 }
 
 h1 {
-	color: var(--text-color-link);
+	color: var(--heading);
 	font-size: var(--font-size-xl);
 	font-weight: 900;
-	text-shadow: 2.5px 2.5px var(--text-color-link-active);
+	text-shadow: 2.5px 2.5px var(--heading-shadow);
 }
 
 h2 {
@@ -238,7 +238,7 @@ blockquote {
 button {
 	display: inline-block;
 	background: linear-gradient(var(--background-color),var(--background-color)) padding-box,
-				linear-gradient(45deg, var(--text-color-link),var(--text-color-link-visited)) border-box !important;
+				linear-gradient(45deg, var(--text-color-link-visited),var(--text-color-link-active)) border-box !important;
 	color: var(--text-color);
 	padding: 5px;
 	border: 3px solid transparent;
@@ -258,7 +258,7 @@ button a {
 button:hover,
 button:focus {
 	background: linear-gradient(var(--text-color),var(--text-color)) padding-box,
-				linear-gradient(45deg, var(--text-color-link-visited),var(--text-color-link)) border-box !important;
+				linear-gradient(45deg, var(--text-color-link-active),var(--text-color-link-visited)) border-box !important;
 	color: var(--background-color) !important;
 }
 
@@ -416,7 +416,7 @@ header {
 }
 
 .nav-item a[href][aria-current="page"] {
-	color: var(--text-color-active) !important; 
+	color: var(--text-color-link-active) !important; 
 	text-decoration-thickness: .175em;
 	text-decoration-style: solid;
 	text-underline-offset: .16rem;
@@ -444,9 +444,9 @@ header {
 .postlist-card {
     padding: 1rem;
     background: var(--background-color);
-	border: .350rem solid var(--text-color-link-active);
+	border: .350rem solid var(--heading-shadow);
 	border-radius: 4px;
-    box-shadow: 8px 8px var(--text-color-link);
+    box-shadow: 8px 8px var(--heading);
 }
 .postlist-item {
 	align-items: baseline;
