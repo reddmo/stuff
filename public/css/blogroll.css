@@ -42,9 +42,7 @@ main :first-child {
 .blog-card {
     padding: 1rem;
     background: var(--background-color);
-	border: .500rem solid;
-	border-image-slice: 1;
-	border-width: .250em;
-	border-image-source: linear-gradient(var(--text-color-link-active),var(--text-color-link),var(--text-color-link-visited));
+	border: .250rem solid var(--text-color-link-active);
+	border-radius: 8px;
     /* box-shadow: 0 0 4px var(--text-color); */
 }
