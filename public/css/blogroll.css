@@ -42,7 +42,7 @@ main :first-child {
 .blog-card {
     padding: 1rem;
     background: var(--background-color);
-	border: .150rem solid var(--text-color-link-active);
-	border-radius: 8px;
-    /* box-shadow: 0 0 4px var(--text-color); */
+	border: .350rem solid var(--text-color-link-active);
+	border-radius: 4px;
+    box-shadow: 8px 8px var(--text-color-link);
 }
