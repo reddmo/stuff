@@ -1,21 +1,4 @@
 /* Defaults */
-
-@font-face {
-	font-family: "Inclusive Sans";
-	font-weight: 400;
-	font-style: normal;
-	src: url("assets/fonts/inclusive-sans-latin-400-normal.woff2") format("woff2");
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Inclusive Sans Italic";
-	font-weight: 400;
-	font-style: normal;
-	src: url("assets/fonts/inclusive-sans-latin-400-italic.woff2") format("woff2");
-	font-display: swap;
-}
-
 @font-face {
 	font-family: "Departure";
 	font-style: normal;
@@ -422,9 +405,26 @@ header {
 	padding: 0;
 	padding-left: 1.5rem;
 }
+
+.postlist :first-child {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+.postlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.postlist-card {
+    padding: 1rem;
+    background: var(--background-color);
+	border: .150rem solid var(--text-color-link-active);
+	border-radius: 8px;
+    /* box-shadow: 0 0 4px var(--text-color); */
+}
 .postlist-item {
-	display: flex;
-	flex-wrap: wrap;
 	align-items: baseline;
 	counter-increment: start-from -1;
 }
@@ -434,7 +434,7 @@ header {
 	content: "" counter(start-from, decimal-leading-zero);
 	line-height: 100%;
 	text-align: right;
-	margin-left: -1.5rem;
+	margin-left: 0;
 }
 .postlist-date,
 .postlist-item:before {
@@ -442,11 +442,11 @@ header {
 	color: var(--color-gray-90);
 }
 .postlist-description {
-	font-size: var(--font-size-xs); /* 13px /16 */
+	font-size: var(--font-size-s); /* 13px /16 */
 	color: var(--text-color);
 }
 .postlist-date {
-	padding-left: .25em;
+	padding-left: 0;
 }
 .postlist-link {
 	font-size: var(--font-size-md); /* 19px /16 */
