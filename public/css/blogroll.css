@@ -1,4 +1,9 @@
 /* Blogroll */
+main :first-child {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
 .blogroll a {
 	text-decoration-color: var(--text-color-link);
 	text-decoration-thickness: .130em;
@@ -7,10 +12,11 @@
 }
 
 .blogpost a {
-  text-decoration-color: var(--text-color-link);
-  text-decoration-thickness: .130em;
-  text-underline-offset: 2px;
-  color: var(--text-color);
+	text-decoration-color: var(--text-color-link);
+	text-decoration-thickness: .130em;
+	text-underline-offset: .08rem;
+	color: var(--text-color);
+	line-height: 1.75;
 }
 
 .blogroll:hover {
@@ -21,7 +27,24 @@
 }
 
 .blogpost:hover {
-  color: var(--text-color);
-  text-decoration-color: var(--text-color-link-active);
-  text-underline-offset: 4px;
+	color: var(--text-color);
+	text-decoration-color: var(--text-color-link-active);
+	text-underline-offset: .16rem;
+}
+
+.blogroll-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.blog-card {
+    padding: 1rem;
+    background: var(--background-color);
+	border: .500rem solid;
+	border-image-slice: 1;
+	border-width: .250em;
+	border-image-source: linear-gradient(var(--text-color-link-active),var(--text-color-link),var(--text-color-link-visited));
+    /* box-shadow: 0 0 4px var(--text-color); */
 }
