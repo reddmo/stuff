@@ -154,7 +154,6 @@ h1 {
 	font-size: var(--font-size-xl);
 	font-weight: 900;
 	text-shadow: 3px 3px var(--heading-shadow);
-	-webkit-text-stroke: 1px var(--background-color);
 }
 
 h2 {
