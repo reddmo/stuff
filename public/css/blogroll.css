@@ -44,5 +44,10 @@ main :first-child {
     background: var(--background-color);
 	border: .350rem solid var(--heading-shadow);
 	border-radius: 4px;
-    box-shadow: 8px 8px var(--heading);
+    box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading);
+}
+
+.blog-card:hover {
+	border: 0.350rem solid var(--heading);
+	box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading-shadow);
 }
