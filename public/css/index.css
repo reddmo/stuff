@@ -313,6 +313,8 @@ code {
 	font-family: 'Departure';
 }
 pre {
+	background-color: #090200 !important;
+	font-family: 'Departure' !important;
 	border: .500em solid;
 	border-image-slice: 1;
 	border-width: .250em;
@@ -534,3 +536,13 @@ header {
 	gap: 1.5rem;
 	padding-left: 0;
 }
+
+.code-icon {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+
+  .code-icon.svg-baseline svg {
+    top: .125em;
+    position: relative;
+  }
