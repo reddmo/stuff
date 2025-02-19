@@ -6,7 +6,6 @@ draft: false
 tags:
  - og-image
  - 11ty
-image: stuffthings.png
 ---
 This is a post that should hopefully prove I updated the OG image. I wanted to clean it up a bit because it was **not** looking great or aligned. I also removed the dashed lines because I didn't like them. 
 

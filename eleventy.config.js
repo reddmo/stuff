@@ -34,7 +34,7 @@ export default async function(eleventyConfig) {
   
   // Fonts
   eleventyConfig.addPassthroughCopy("site/assets/fonts/*.{woff,woff2,ttf}");
-  eleventyConfig.addPassthroughCopy("site/assets/js/*");
+  eleventyConfig.addPassthroughCopy("site/assets/**/*");
   
   eleventyConfig.addPassthroughCopy("admin");
 
