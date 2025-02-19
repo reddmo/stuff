@@ -4,6 +4,7 @@ description: Getting webmentions up and running on 11ty - update!
 date: 2024-06-19
 tags: ['11ty', 'webmentions']
 image: stuffopen.png
+hasCodeBlock: true
 ---
 
 > [!NOTE]

@@ -69,6 +69,10 @@
 			{% if preloads.crossorigin %}crossorigin{% endif %} />
 	  	{% endif %}
 
+		{% if hasCodeBlock %}
+		<script src="/assets/js/code.js" defer></script>
+		{% endif %}
+
 
 		<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
 		{%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
