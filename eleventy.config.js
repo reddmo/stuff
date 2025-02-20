@@ -31,9 +31,8 @@ export default async function(eleventyConfig) {
       "./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
     })
     .addPassthroughCopy("./site/feed/pretty-atom-feed.xsl");
-  
-  // Fonts
-  eleventyConfig.addPassthroughCopy("site/assets/fonts/*.{woff,woff2,ttf}");
+
+  // Assets
   eleventyConfig.addPassthroughCopy("site/assets/**/*");
   
   eleventyConfig.addPassthroughCopy("admin");
@@ -44,7 +43,7 @@ export default async function(eleventyConfig) {
   breaks: true,
   linkify: true,
   typographer: true
-};
+  };
 
 const md = markdownit(opt)
   .use(markdownItGitHubAlerts)
@@ -186,6 +185,29 @@ const md = markdownit(opt)
   }
 }
 
+export const config = {
+  templateFormats: [
+    "md",
+    "njk",
+    "html",
+    "liquid",
+    "11ty.js",
+    "webc"  // Add webc template format
+  ],
+
+  markdownTemplateEngine: "njk",  // For .md files
+  htmlTemplateEngine: "njk",     // For .html files
+  webcTemplateEngine: "webc",    // For .webc files
+
+  dir: {
+    input: "site",            // Where content lives
+    includes: "/_includes",      // Where includes (such as WebC components) are
+    svg: "/svg",
+    data: "/_data",             // Global data
+    output: "dist"             // Output directory
+  },
+};
+
 // Convert a date string to ISO string using dayjs
 export const toISOString = dateString => dayjs(dateString).toISOString();
 
@@ -235,34 +257,10 @@ export const webmentionsByUrl = (webmentions, url) => {
   return data;
 };
 
-
 // Create a plain date from an ISO date for webmentions
 export const plainDate = (isoDate) => {
   let date = new Date(isoDate);
   let options = { year: "numeric", month: "long", day: "numeric" };
   let formattedDate = date.toLocaleDateString("en-US", options);
   return formattedDate;
-};
-
-export const config = {
-  templateFormats: [
-    "md",
-    "njk",
-    "html",
-    "liquid",
-    "11ty.js",
-    "webc"  // Add webc template format
-  ],
-
-  markdownTemplateEngine: "njk",  // For .md files
-  htmlTemplateEngine: "njk",     // For .html files
-  webcTemplateEngine: "webc",    // For .webc files
-
-  dir: {
-    input: "site",            // Where content lives
-    includes: "/_includes",      // Where includes (such as WebC components) are
-    svg: "/svg",
-    data: "/_data",             // Global data
-    output: "dist"             // Output directory
-  },
 };
