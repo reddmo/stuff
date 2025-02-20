@@ -25,21 +25,6 @@
 	--color-caution: light-dark(#d1242f,#f85149);
 	--color-important: light-dark(#8250df,#a371f7);
 
-	/* Original
-	--background-color: light-dark(#fefefe,#090200);
-    --text-color: light-dark(#212829,#f2f6f7);
-    --text-color-link: light-dark(#e31c3d,#50d0ee);
-    --text-color-link-active: light-dark(#4e2e92,#f7ca18);
-    --text-color-active: light-dark(#c94a53,#d4a373);
-    --text-color-link-visited: light-dark(#007b96,rgba(246,36,89));
-    --border-color: light-dark(#d81c23,#f4db7d);
-    --code-background-color: light-dark(#d9d9d9,#444444);
-    --code-color: light-dark(#222,#ddd);
-    --heading: light-dark(#e31c3d,#f7ca18);
-    --heading-shadow: light-dark(#4e2e92,rgba(246,36,89));
-    --header-bottom: light-dark(#d9d9d9,#444444);
-    --button-text: light-dark(#f9f7f2,#f9f7f2); */
-
     /* Base colors - clean white and deep navy */
     --background-color: light-dark(#ffffff, #0a0f2d);
     --text-color: light-dark(#1a1a1a, #ffffff);
@@ -62,21 +47,8 @@
     
     /* Button - maintained for contrast */
     --button-text: light-dark(#ffffff, #ffffff);
-/*
-	--background-color: light-dark(#fefefe,#1a2238);
-	--text-color: light-dark(#212829,#f2f6f7);
-	--text-color-link: light-dark(#b30d0d,#ff6a3d);
-	--text-color-link-active: light-dark(#e06727,#f4db7d);
-	--text-color-link-visited: light-dark(#247e81,#9daaf2);
-	--border-color: light-dark(#d81c23,#f4db7d); */
+
 	--syntax-tab-size: 2;
-/*
-	--font-size-xs: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
-	--font-size-base: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
-	--font-size-lg: clamp(1.56rem, calc(1.41rem + 0.76vw), 2rem);
-	--font-size-xl: clamp(1.95rem, calc(1.71rem + 1.24vw), 2.66rem);
-	--font-size-xxl: clamp(2.44rem, calc(2.05rem + 1.93vw), 3.55rem);
-*/
 
 	--font-size-xs: clamp(0.8681rem, 0.8639rem + 0.0208vw, 0.88rem);
     --font-size-s: clamp(1.0417rem, 1.0214rem + 0.1014vw, 1.1rem);
@@ -365,6 +337,16 @@ header {
     border: 3px solid var(--text-color-link-active);
     border-radius: 6px;
 }
+
+.code-icon {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.code-icon.svg-baseline svg {
+    top: .125em;
+    position: relative;
+}
   
 .new {
     background: var(--text-color-link);
@@ -536,13 +518,3 @@ header {
 	gap: 1.5rem;
 	padding-left: 0;
 }
-
-.code-icon {
-    display: inline-flex;
-    vertical-align: middle;
-  }
-
-  .code-icon.svg-baseline svg {
-    top: .125em;
-    position: relative;
-  }

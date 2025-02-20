@@ -8,211 +8,61 @@ import 'dotenv/config';
 import markdownit from "markdown-it";
 import markdownItGitHubAlerts from 'markdown-it-github-alerts';
 import markdownItAttrs from "markdown-it-attrs";
-import setLibrary from 'markdown-it-github-alerts';
 import markdownItFootnote from 'markdown-it-footnote';
 import { full as emoji } from 'markdown-it-emoji';
 import eleventyLucideicons from "@grimlink/eleventy-plugin-lucide-icons";
 import pluginFilters from "./_config/filters.js";
-import EleventyPluginOgImage from 'eleventy-plugin-og-image';
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
-import fs from 'fs';
-import path from 'node:path';
 import Image from '@11ty/eleventy-img';
 import dayjs from 'dayjs';
 import sanitizeHTML from 'sanitize-html';
+import path from 'node:path';
 
-/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
-export default async function(eleventyConfig) {
-
-  // Copy the contents of the `public` folder to the output folder
-  eleventyConfig
-    .addPassthroughCopy({
-      "./public/": "/",
-      "./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
-    })
-    .addPassthroughCopy("./site/feed/pretty-atom-feed.xsl");
-
-  // Assets
-  eleventyConfig.addPassthroughCopy("site/assets/**/*");
-  
-  eleventyConfig.addPassthroughCopy("admin");
-
-  // Mardown-It
-  let opt = {
-  html: true,
-  breaks: true,
-  linkify: true,
-  typographer: true
+// Setup markdown-it configuration
+const setupMarkdown = () => {
+  const options = {
+    html: true,
+    breaks: true,
+    linkify: true,
+    typographer: true
   };
 
-const md = markdownit(opt)
-  .use(markdownItGitHubAlerts)
-  .use(markdownItFootnote)
-  .use(markdownItAttrs)
-  .use(emoji);
+  const md = markdownit(options)
+    .use(markdownItGitHubAlerts)
+    .use(markdownItFootnote)
+    .use(markdownItAttrs)
+    .use(emoji);
 
   md.renderer.rules.footnote_block_open = () => (
     '<section class="footnotes">\n' +
     '<h4>Footnotes</h4>\n' +
-    '<ol class="footnotes-list">\n' 
+    '<ol class="footnotes-list">\n'
   );
 
-  // Watch content images for the image pipeline
-  eleventyConfig.addWatchTarget("site/**/*.{svg,webp,png,jpeg}");
-
-  // Per-page bundles (e.g. {% css %} and {% js %} shortcodes)
-  eleventyConfig.addBundle("css");
-  eleventyConfig.addBundle("js");
-
-  // Add Markdown GitHub Alerts
-  eleventyConfig.setLibrary('md', md);
-
-  // Official Eleventy plugins
-  eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-    preAttributes: { tabindex: 0 }
-  });
-  eleventyConfig.addPlugin(pluginNavigation);
-  eleventyConfig.addPlugin(eleventyAutoCacheBuster);
-  eleventyConfig.addPlugin(HtmlBasePlugin);
-  eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
-  eleventyConfig.addPlugin(eleventyLucideicons, {
-    "class": "svg",
-    "stroke": "currentColor"
-  });
-
-	eleventyConfig.addPlugin(EleventyRenderPlugin);
-
-  // Atom Feed Plugin
-  eleventyConfig.addPlugin(feedPlugin, {
-    type: "atom",
-    outputPath: "/feed/feed.xml",
-    stylesheet: "pretty-atom-feed.xsl",
-    templateData: {
-      eleventyNavigation: {
-        key: "Feed",
-        order: 7
-      }
-    },
-    collection: {
-      name: "posts",
-      limit: 10,
-    },
-    metadata: {
-      language: "en",
-      title: "stuff&things",
-      subtitle: "Just some stuff about things.",
-      base: "https://stuffandthings.lol/",
-      author: {
-        name: "Jason"
-      }
-    }
-  });
-
-  eleventyConfig.addPlugin(feedPlugin, {
-    type: "rss",
-    outputPath: "/feed/notesfeed.xml",
-    stylesheet: "pretty-atom-feed.xsl",
-    collection: {
-      name: "notes",
-      limit: 10,
-    },
-    metadata: {
-      language: "en",
-      title: "stuff&things",
-      subtitle: "Just some stuff about things.",
-      base: "https://stuffandthings.lol/",
-      author: {
-        name: "Jason"
-      }
-    }
-  });
-
-  // Image optimization
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    extensions: "html",
-    formats: ["avif", "webp", "jpg", "png", "auto"],
-    widths: ["auto"],
-    defaultAttributes: {
-      loading: "lazy",
-      decoding: "async",
-    }
-  });
-
-  // Filters Plugin
-  eleventyConfig.addPlugin(pluginFilters);
-
-  // ID Attribute Plugin
-  eleventyConfig.addPlugin(IdAttributePlugin);
-
-  eleventyConfig.addFilter("contentImgUrlFilter", contentImgUrlFilter);
-
-  // Shortcode for current build date
-  eleventyConfig.addShortcode("currentBuildDate", () => {
-    return (new Date()).toISOString();
-  });
-
-  // Webmentions
-  eleventyConfig.addFilter("webmentionsByUrl", webmentionsByUrl);
-  eleventyConfig.addFilter("plainDate", plainDate);
-
-  // Lucide icons shortcode
-  eleventyConfig.addShortcode("lucide", function(eleventyLucideicons) { /* … */ });
-
-  eleventyConfig.addCollection("posts", function (collections) {
-		return collections.getFilteredByGlob("site/blog/**/*.md");
-	});
-
-  eleventyConfig.addCollection("notes", function (collections) {
-		return collections.getFilteredByGlob("site/notes/**/*.md");
-	});
-
-  async function contentImgUrlFilter(src) {
-    const inputDir = path.dirname(this.page.inputPath);
-    const imagePath = path.resolve(inputDir, src);
-    const outputDir = path.dirname(this.page.outputPath);
-    const urlPath = this.page.url;
-  
-    const stats = await Image(imagePath, {
-      widths: [1200], // Width for Open Graph image
-      formats: ["jpg", "png"],
-      outputDir: outputDir, // Output directory
-      urlPath: urlPath, // Public URL path
-      filenameFormat: function (hash, src, width, format) {
-          return `${hash}-${width}.${format}`;
-      },
-    });
-    return stats.jpeg[0].url; // Return the URL of the processed image
-  }
-}
-
-export const config = {
-  templateFormats: [
-    "md",
-    "njk",
-    "html",
-    "liquid",
-    "11ty.js",
-    "webc"  // Add webc template format
-  ],
-
-  markdownTemplateEngine: "njk",  // For .md files
-  htmlTemplateEngine: "njk",     // For .html files
-  webcTemplateEngine: "webc",    // For .webc files
-
-  dir: {
-    input: "site",            // Where content lives
-    includes: "/_includes",      // Where includes (such as WebC components) are
-    svg: "/svg",
-    data: "/_data",             // Global data
-    output: "dist"             // Output directory
-  },
+  return md;
 };
 
-// WEBMENTIONS
-// Convert a date string to ISO string using dayjs
+// Feed configuration helpers
+const createFeedConfig = (options) => {
+  const baseConfig = {
+    stylesheet: "pretty-atom-feed.xsl",
+    metadata: {
+      language: "en",
+      title: "stuff&things",
+      subtitle: "Just some stuff about things.",
+      base: "https://stuffandthings.lol/",
+      author: {
+        name: "Jason"
+      }
+    }
+  };
+  
+  return { ...baseConfig, ...options };
+};
+
+// Webmention utility functions
 export const toISOString = dateString => dayjs(dateString).toISOString();
 
-// Filter and sort webmentions by URL, and sanitize HTML content
 export const webmentionsByUrl = (webmentions, url) => {
   const allowedTypes = {
     likes: ["like-of"],
@@ -230,38 +80,168 @@ export const webmentionsByUrl = (webmentions, url) => {
   };
 
   const pageWebmentions = webmentions
-    .filter(
-      (mention) => mention["wm-target"] === "https://stuffandthings.lol" + url
-    )
+    .filter(mention => mention["wm-target"] === "https://stuffandthings.lol" + url)
     .sort((a, b) => new Date(b.published) - new Date(a.published))
     .map(sanitize);
 
   const likes = pageWebmentions
-    .filter((mention) => allowedTypes.likes.includes(mention["wm-property"]))
-    .filter((like) => like.author)
-    .map((like) => like.author);
+    .filter(mention => allowedTypes.likes.includes(mention["wm-property"]))
+    .filter(like => like.author)
+    .map(like => like.author);
 
   const reposts = pageWebmentions
-    .filter((mention) => allowedTypes.reposts.includes(mention["wm-property"]))
-    .filter((repost) => repost.author)
-    .map((repost) => repost.author);
+    .filter(mention => allowedTypes.reposts.includes(mention["wm-property"]))
+    .filter(repost => repost.author)
+    .map(repost => repost.author);
 
   const comments = pageWebmentions
-    .filter((mention) => allowedTypes.comments.includes(mention["wm-property"]))
-    .filter((comment) => {
+    .filter(mention => allowedTypes.comments.includes(mention["wm-property"]))
+    .filter(comment => {
       const { author, published, content } = comment;
       return author && author.name && published && content;
     });
 
   const mentionCount = likes.length + reposts.length + comments.length;
-  const data = { likes, reposts, comments, mentionCount };
-  return data;
+  return { likes, reposts, comments, mentionCount };
 };
 
-// Create a plain date from an ISO date for webmentions
 export const plainDate = (isoDate) => {
-  let date = new Date(isoDate);
-  let options = { year: "numeric", month: "long", day: "numeric" };
-  let formattedDate = date.toLocaleDateString("en-US", options);
-  return formattedDate;
+  const date = new Date(isoDate);
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return date.toLocaleDateString("en-US", options);
+};
+
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
+export default async function(eleventyConfig) {
+  // --- File passthrough configuration ---
+  eleventyConfig.addPassthroughCopy({
+    "./public/": "/",
+    "./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
+  });
+  eleventyConfig.addPassthroughCopy("./site/feed/pretty-atom-feed.xsl");
+  eleventyConfig.addPassthroughCopy("site/assets/**/*");
+  eleventyConfig.addPassthroughCopy("admin");
+
+  // --- Markdown configuration ---
+  const md = setupMarkdown();
+  eleventyConfig.setLibrary('md', md);
+  
+  // --- Watch configuration ---
+  eleventyConfig.addWatchTarget("site/**/*.{svg,webp,png,jpeg}");
+  
+  // --- Bundle configuration ---
+  eleventyConfig.addBundle("css");
+  eleventyConfig.addBundle("js");
+
+  // --- Official Eleventy plugins ---
+  eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+    preAttributes: { tabindex: 0 }
+  });
+  eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(eleventyAutoCacheBuster);
+  eleventyConfig.addPlugin(HtmlBasePlugin);
+  eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
+  eleventyConfig.addPlugin(pluginFilters);
+  eleventyConfig.addPlugin(IdAttributePlugin);
+  
+  // --- Icon plugin ---
+  eleventyConfig.addPlugin(eleventyLucideicons, {
+    "class": "svg",
+    "stroke": "currentColor"
+  });
+
+  // --- Feed plugins ---
+  eleventyConfig.addPlugin(feedPlugin, createFeedConfig({
+    type: "atom",
+    outputPath: "/feed/feed.xml",
+    templateData: {
+      eleventyNavigation: {
+        key: "Feed",
+        order: 7
+      }
+    },
+    collection: {
+      name: "posts",
+      limit: 10,
+    }
+  }));
+
+  eleventyConfig.addPlugin(feedPlugin, createFeedConfig({
+    type: "rss",
+    outputPath: "/feed/notesfeed.xml",
+    collection: {
+      name: "notes",
+      limit: 10,
+    }
+  }));
+
+  // --- Image optimization ---
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    extensions: "html",
+    formats: ["avif", "webp", "jpg", "png", "auto"],
+    widths: ["auto"],
+    defaultAttributes: {
+      loading: "lazy",
+      decoding: "async",
+    }
+  });
+
+  // --- Custom filters ---
+  eleventyConfig.addFilter("contentImgUrlFilter", contentImgUrlFilter);
+  eleventyConfig.addFilter("webmentionsByUrl", webmentionsByUrl);
+  eleventyConfig.addFilter("plainDate", plainDate);
+
+  // --- Custom shortcodes ---
+  eleventyConfig.addShortcode("currentBuildDate", () => new Date().toISOString());
+  eleventyConfig.addShortcode("lucide", function(eleventyLucideicons) { /* … */ });
+
+  // --- Custom collections ---
+  eleventyConfig.addCollection("posts", collections => 
+    collections.getFilteredByGlob("site/blog/**/*.md")
+  );
+
+  eleventyConfig.addCollection("notes", collections => 
+    collections.getFilteredByGlob("site/notes/**/*.md")
+  );
+
+  // Image processing function for content
+  async function contentImgUrlFilter(src) {
+    const inputDir = path.dirname(this.page.inputPath);
+    const imagePath = path.resolve(inputDir, src);
+    const outputDir = path.dirname(this.page.outputPath);
+    const urlPath = this.page.url;
+  
+    const stats = await Image(imagePath, {
+      widths: [1200],
+      formats: ["jpg", "png"],
+      outputDir: outputDir,
+      urlPath: urlPath,
+      filenameFormat: (hash, src, width, format) => `${hash}-${width}.${format}`,
+    });
+    
+    return stats.jpeg[0].url;
+  }
+}
+
+// Configuration object
+export const config = {
+  templateFormats: [
+    "md",
+    "njk",
+    "html",
+    "liquid",
+    "11ty.js",
+    "webc"
+  ],
+  markdownTemplateEngine: "njk",
+  htmlTemplateEngine: "njk",
+  webcTemplateEngine: "webc",
+  dir: {
+    input: "site",
+    includes: "/_includes",
+    svg: "/svg",
+    data: "/_data",
+    output: "dist"
+  },
 };
