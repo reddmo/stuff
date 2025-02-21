@@ -34,27 +34,18 @@ main :first-child {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
-  
-.pagination {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-    
-.pagination :first-child {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
     
 .pagination-list {
     display: flex;
     list-style: none;
     padding: 0;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 0.25rem;
 }
     
 .pagination-item {
     margin: 0 0.25rem;
+    font-size: var(--font-size-xs);
 }
     
 .pagination-item a {
@@ -62,15 +53,14 @@ main :first-child {
     background: linear-gradient(var(--background-color), var(--background-color)) padding-box,
                 linear-gradient(45deg, var(--text-color-link-visited), var(--text-color-link-active)) border-box !important;
     color: var(--text-color);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     border: 3px solid transparent;
     border-radius: 12px;
-    font-weight: 700;
+    font-weight: 400;
     text-decoration: none;
     cursor: pointer;
     font-family: var(--font-family);
     line-height: 1.25em;
-    transition: all 0.2s ease;
 }
     
 .pagination-item a:hover:not(.disabled),
@@ -85,7 +75,7 @@ main :first-child {
     background: linear-gradient(var(--text-color-link), var(--text-color-link)) padding-box,
                 linear-gradient(45deg, var(--text-color-link-active), var(--text-color-link-visited)) border-box !important;
     color: var(--background-color);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     border: 3px solid transparent;
     border-radius: 12px;
     font-weight: 900;

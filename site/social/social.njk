@@ -56,13 +56,13 @@ pagination:
       <!-- Previous Page Link -->
       <li class="pagination-item">
         <a href="{{ pagination.href.previous }}" {% if not pagination.href.previous %}aria-disabled="true" class="disabled"{% endif %}>
-          Previous
+          Prev
         </a>
       </li>
 
       <!-- Current Page Indicator -->
       <li class="pagination-item pagination-current">
-        <span>Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
+        <span>{{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
       </li>
 
       <!-- Next Page Link -->
@@ -79,5 +79,4 @@ pagination:
         </a>
       </li>
     </ul>
-  </nav>
 {% endif %}
