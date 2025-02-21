@@ -7,7 +7,6 @@ export default async function() {
   const MASTODON_INSTANCE = process.env.MASTODON_INSTANCE;
   const MASTODON_USERNAME = process.env.MASTODON_USERNAME;
   
-
   const url = `https://${MASTODON_INSTANCE}/api/v1/accounts/lookup?acct=${MASTODON_USERNAME}`;
   
   try {

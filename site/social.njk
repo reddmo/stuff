@@ -7,7 +7,6 @@ pagination:
   data: mastodon
   size: 8
   alias: paginatedPosts
-permalink: "/mastodon/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
 {%- css %}{% include "public/css/mastodon.css" %}{% endcss %}
 <h1>{{ title }}</h1>
