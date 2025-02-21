@@ -1,17 +1,16 @@
-// _data/mastodon.js
+
 import EleventyFetch from "@11ty/eleventy-fetch";
-import 'dotenv/config';
+import dotenv from 'dotenv';
 
 export default async function() {
-  // Use environment variables with fallbacks
-  const MASTODON_INSTANCE = 'social.lol';
-  const MASTODON_USERNAME = 'jasonm';
+
+  const MASTODON_INSTANCE = process.env.MASTODON_INSTANCE;
+  const MASTODON_USERNAME = process.env.MASTODON_USERNAME;
   
-  // API endpoint to get your account info
+
   const url = `https://${MASTODON_INSTANCE}/api/v1/accounts/lookup?acct=${MASTODON_USERNAME}`;
   
   try {
-    // First get your account ID
     const accountData = await EleventyFetch(url, {
       duration: "1h",
       type: "json"
@@ -19,10 +18,8 @@ export default async function() {
     
     const accountId = accountData.id;
     
-    // Get all statuses with pagination
     const statuses = await getAllStatuses(accountId, MASTODON_INSTANCE);
     
-    // Process the statuses to extract relevant data
     return statuses.map(status => {
       return {
         id: status.id,
@@ -32,18 +29,16 @@ export default async function() {
         media_attachments: status.media_attachments,
         favourites_count: status.favourites_count,
         reblogs_count: status.reblogs_count,
-        // Strip HTML from content for a plain text version
         plain_content: status.content.replace(/<[^>]*>?/gm, '')
       };
     });
     
   } catch (error) {
     console.error("Error fetching Mastodon posts:", error);
-    return []; // Return empty array on error
+    return []; 
   }
 }
 
-// Pagination function to get all statuses
 const getAllStatuses = async (accountId, instance) => {
   let allStatuses = [];
   let maxId = null;

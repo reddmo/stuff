@@ -25,8 +25,6 @@ main :first-child {
     box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading-shadow);
 }
 
-
-/* Pagination styles */
 .pagination {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -37,7 +35,6 @@ main :first-child {
     margin-bottom: 0 !important;
 }
   
-  /* Pagination styles - updated to match site button design */
 .pagination {
     margin-top: 2rem;
     margin-bottom: 2rem;
