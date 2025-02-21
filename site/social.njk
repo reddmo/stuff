@@ -1,0 +1,84 @@
+---
+title: Social Posts
+eleventyNavigation:
+  key: Social
+  order: 8
+pagination:
+  data: mastodon
+  size: 8
+  alias: paginatedPosts
+permalink: "/mastodon/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+{%- css %}{% include "public/css/mastodon.css" %}{% endcss %}
+<h1>{{ title }}</h1>
+<br>
+  {% if paginatedPosts.length > 0 %}
+    <div class="mastodon-grid">
+      {% for post in paginatedPosts %}
+        <article class="mastodon-card">
+          <div class="post-date">{{ post.created_at | dateToFormat("yyyy-MM-dd HH:mm") }}</div>
+          <div class="post-content">{{ post.content | safe }}</div>
+          
+          {% if post.media_attachments.length > 0 %}
+            <div class="post-media">
+              {% for media in post.media_attachments %}
+                {% if media.type == "image" %}
+                  <img src="{{ media.preview_url }}" alt="Media attachment" loading="lazy">
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+          
+          <div class="post-meta">
+            <span><svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="24" height="24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor">
+                <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
+              </svg> {{ post.favourites_count }}</span>
+            <span><svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2"> <path d="M4 12v-3a3 3 0 0 1 3 -3h13m-3 -3l3 3l-3 3"></path> <path d="M20 12v3a3 3 0 0 1 -3 3h-13m3 3l-3 -3l3 -3"></path> </svg>  {{ post.reblogs_count }}</span>
+            <a href="{{ post.url }}" target="_blank" rel="noopener noreferrer">View on social.lol</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No Mastodon posts found. Check back later.</p>
+  {% endif %}
+<br>
+<!-- Pagination Navigation -->
+{% if pagination.pages.length > 1 %}
+  <nav class="pagination" aria-label="Pagination">
+    <ul class="pagination-list">
+      <!-- First Page Link -->
+      <li class="pagination-item">
+        <a href="{{ pagination.href.first }}" {% if pagination.pageNumber === 0 %}aria-disabled="true" class="disabled"{% endif %}>
+          First
+        </a>
+      </li>
+
+      <!-- Previous Page Link -->
+      <li class="pagination-item">
+        <a href="{{ pagination.href.previous }}" {% if not pagination.href.previous %}aria-disabled="true" class="disabled"{% endif %}>
+          Previous
+        </a>
+      </li>
+
+      <!-- Current Page Indicator -->
+      <li class="pagination-item pagination-current">
+        <span>Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
+      </li>
+
+      <!-- Next Page Link -->
+      <li class="pagination-item">
+        <a href="{{ pagination.href.next }}" {% if not pagination.href.next %}aria-disabled="true" class="disabled"{% endif %}>
+          Next
+        </a>
+      </li>
+
+      <!-- Last Page Link -->
+      <li class="pagination-item">
+        <a href="{{ pagination.href.last }}" {% if pagination.pageNumber === pagination.pages.length - 1 %}aria-disabled="true" class="disabled"{% endif %}>
+          Last
+        </a>
+      </li>
+    </ul>
+  </nav>
+{% endif %}

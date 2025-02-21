@@ -1,0 +1,171 @@
+main :first-child {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.mastodon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 0;
+    width: 100%;
+}
+
+.mastodon-card {
+    padding: 1rem;
+    background: var(--background-color);
+    border: .350rem solid var(--heading-shadow);
+    border-radius: 4px;
+    box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading);
+    transition: 0;
+}
+
+.mastodon-card:hover {
+    border: 0.350rem solid var(--heading);
+    box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading-shadow);
+}
+
+
+/* Pagination styles */
+.pagination {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+  
+.pagination :first-child {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+  
+  /* Pagination styles - updated to match site button design */
+.pagination {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+    
+.pagination :first-child {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+    
+.pagination-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    gap: 0.75rem;
+}
+    
+.pagination-item {
+    margin: 0 0.25rem;
+}
+    
+.pagination-item a {
+    display: inline-block;
+    background: linear-gradient(var(--background-color), var(--background-color)) padding-box,
+                linear-gradient(45deg, var(--text-color-link-visited), var(--text-color-link-active)) border-box !important;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border: 3px solid transparent;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+    line-height: 1.25em;
+    transition: all 0.2s ease;
+}
+    
+.pagination-item a:hover:not(.disabled),
+.pagination-item a:focus:not(.disabled) {
+    background: linear-gradient(var(--text-color), var(--text-color)) padding-box,
+                linear-gradient(45deg, var(--text-color-link-active), var(--text-color-link-visited)) border-box !important;
+    color: var(--background-color) !important;
+}
+    
+.pagination-current span {
+    display: inline-block;
+    background: linear-gradient(var(--text-color-link), var(--text-color-link)) padding-box,
+                linear-gradient(45deg, var(--text-color-link-active), var(--text-color-link-visited)) border-box !important;
+    color: var(--background-color);
+    padding: 0.5rem 1rem;
+    border: 3px solid transparent;
+    border-radius: 12px;
+    font-weight: 900;
+    font-family: var(--font-family);
+    line-height: 1.25em;
+}
+    
+.pagination-item a.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: linear-gradient(var(--background-color), var(--background-color)) padding-box,
+                linear-gradient(45deg, var(--color-gray-50), var(--color-gray-50)) border-box !important;
+    color: var(--color-gray-50);
+}
+
+/* Post content styling */
+.post-date {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-90);
+    margin-bottom: 0.5rem;
+}
+
+.post-content {
+    font-size: var(--font-size-s);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.post-content a {
+    color: var(--text-color-link);
+}
+
+.post-content p {
+    margin-bottom: 0.75rem;
+}
+
+.post-media {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.post-media img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.post-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: var(--font-size-xs);
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--header-bottom);
+}
+
+.post-meta a {
+    margin-left: auto;
+}
+
+/* Make emoji look nice */
+.post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.social-icon {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.social-icon.svg-baseline svg {
+    top: .125em;
+    position: relative;
+}

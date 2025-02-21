@@ -191,6 +191,17 @@ export default async function(eleventyConfig) {
   eleventyConfig.addFilter("contentImgUrlFilter", contentImgUrlFilter);
   eleventyConfig.addFilter("webmentionsByUrl", webmentionsByUrl);
   eleventyConfig.addFilter("plainDate", plainDate);
+  eleventyConfig.addFilter("dateToFormat", function(date, format) {
+    return new Date(date).toLocaleDateString('en-US', {
+      year: 'numeric', 
+      month: '2-digit', 
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  });
+
+  process.env.ELEVENTY_FETCH_TIMEOUT = 10000;
 
   // --- Custom shortcodes ---
   eleventyConfig.addShortcode("currentBuildDate", () => new Date().toISOString());
