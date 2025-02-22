@@ -15,7 +15,7 @@ pagination:
     <div class="mastodon-grid">
       {% for post in paginatedPosts %}
         <article class="mastodon-card">
-          <div class="post-date">{{ post.created_at | dateToFormat("yyyy-MM-dd HH:mm") }}</div>
+          <div class="post-date">{{ post.created_at | dateToFormat("yyyy-MM-dd HH:mm", "America/New_York") }}</div>
           <div class="post-content">{{ post.content | safe }}</div>
           
           {% if post.media_attachments.length > 0 %}
