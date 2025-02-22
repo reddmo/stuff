@@ -194,7 +194,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addFilter("dateToFormat", function(date, format) {
     return new Date(date).toLocaleDateString('en-US', {
       year: 'numeric', 
-      month: '2-digit', 
+      month: 'long', 
       day: '2-digit',
       hour: '2-digit',
       minute: '2-digit'
