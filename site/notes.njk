@@ -8,20 +8,23 @@ pagination:
   alias: noteposts
   reverse: true
 ---
+{%- css %}{% include "public/css/notes.css" %}{% endcss %}
 {%- css %}{% include "public/css/statuslog.css" %}{% endcss %}
+
 <h1>Notes</h1>
-
+<br>
+<div class="notes-grid">
 {% for post in noteposts %}
-
-    <h2>{{ post.data.title }}</h2>
+    <article class="notes-card">
+        <h2>{{ post.data.title }}</h2>
         <ul class="post-metadata">
-            <li><time datetime="{{ post.date | htmlDateString }}" style="color: var(--text-color-link)">{{ post.date | readableDate }}</time></li>
+            <li><time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></li>
         </ul>
 
-    {{ post.content | safe }}
-    <p><a href="{{ post.url }}" class="button">Read more</a> {% lucide "move-right", { "width": "12", "height": "12", "stroke-width": "6" } %}</p>
- <hr>
+        {{ post.content | safe }}
+      </article>
 {% endfor %}
+</div>
 
 <p><h1>Statuslog</h1></p>
 <p><script src="https://status.lol/jasonm.js?time&link&fluent"></script></p>
