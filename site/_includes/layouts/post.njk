@@ -2,6 +2,7 @@
 layout: layouts/base.njk
 hasCodeBlock: true
 image: stuffthings.png
+permalink: /blog/{{ page.date | htmlDateString }}/{{ title | slugify }}.html
 ---
 {# Only include the syntax highlighter CSS on blog posts #}
 {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
