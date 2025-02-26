@@ -1,6 +1,7 @@
 ---
 title: The beginning of the year
 description: An end, a beginning, and nothing at all.
+date: 2024-01-01
 tags: ['holidays']
 ---
 Happy New Year, everyone!
