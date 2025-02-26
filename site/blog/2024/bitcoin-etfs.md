@@ -1,6 +1,7 @@
 ---
 title: A Bit about ETFs
 description: A couple of thoughts on Bitcoin ETFs
+date: 2024-01-12
 tags: ['bitcoin', 'ETFs', 'ESG', 'cryptocurrency']
 ---
 Bitcoin spot ETFs are now available for trading. They’re called spot ETFs [because they’re traded on real-time pricing](https://www.morningstar.com/etfs/spot-bitcoin-etfs-are-here-should-you-invest ) as compared to futures. This is … interesting. It’s a melding of a few of my worlds: tech, finance, disdain for investment opportunities that border on grift. It has it all.
