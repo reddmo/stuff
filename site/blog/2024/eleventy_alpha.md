@@ -13,6 +13,6 @@ But not that we returned yesterday, I've:
 
 The last one may have been the easiest. **DO NOT** assume that will be the same for yours if you try it. Mine's light on CJS and was easily convertible. If your site's heavier on CJS, it will take more time.
 
-That said, the build time is faster and the next step will be for me to finally figure out [why images break the RSS feed](https://stuffandthings.lol/2024-05-16_new_site/).
+That said, the build time is faster and the next step will be for me to finally figure out [why images break the RSS feed](https://my.stuffandthings.lol/2024-05-16_new_site/).
 
 I may have a longer post on this in the near future but I wanted to get back into posting.

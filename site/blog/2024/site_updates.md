@@ -4,7 +4,7 @@ description: Refreshed and moved to Neocities
 date: 2024-06-09
 tags: ['11ty', 'neocities']
 ---
-After the move to the [11ty 3.0.0 alpha](https://stuffandthings.lol/2024-06-02_eleventy_alpha/), I decided to do a little update on some of the design and colors. I added cards. I like cards. Don't @ me. I'll use them and I might even put cards in cards. Who knows.
+After the move to the [11ty 3.0.0 alpha](https://my.stuffandthings.lol/2024-06-02_eleventy_alpha/), I decided to do a little update on some of the design and colors. I added cards. I like cards. Don't @ me. I'll use them and I might even put cards in cards. Who knows.
 
 I hope you enjoy the updated colors. I was going for something -- I don't know if it was retro video games or just vibrant colors but I wanted something that popped a little bit. 
 

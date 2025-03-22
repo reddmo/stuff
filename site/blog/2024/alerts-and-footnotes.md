@@ -15,4 +15,4 @@ But this led me to the other markdown-it plugin I wanted to implement: footnotes
 
 Again, it's more the journey than knowing what I'm going to do once I get there.
 
-[^1]: You can see them in action on [this post](https://stuffandthings.lol/blog/2024/2024-06-19_webmentions/).
+[^1]: You can see them in action on [this post](https://my.stuffandthings.lol/blog/2024/2024-06-19_webmentions/).

@@ -50,7 +50,7 @@ const createFeedConfig = (options) => {
       language: "en",
       title: "stuff&things",
       subtitle: "Just some stuff about things.",
-      base: "https://stuffandthings.lol/",
+      base: "https://my.stuffandthings.lol/",
       author: {
         name: "Jason"
       }
@@ -80,7 +80,7 @@ export const webmentionsByUrl = (webmentions, url) => {
   };
 
   const pageWebmentions = webmentions
-    .filter(mention => mention["wm-target"] === "https://stuffandthings.lol" + url)
+    .filter(mention => mention["wm-target"] === "https://my.stuffandthings.lol" + url)
     .sort((a, b) => new Date(b.published) - new Date(a.published))
     .map(sanitize);
 

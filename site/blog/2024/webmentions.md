@@ -63,7 +63,7 @@ export const webmentionsByUrl = (webmentions, url) => {
 
   const pageWebmentions = webmentions
     .filter(
-      (mention) => mention["wm-target"] === "https://stuffandthings.lol" + url
+      (mention) => mention["wm-target"] === "https://my.stuffandthings.lol" + url
     )
     .sort((a, b) => new Date(b.published) - new Date(a.published))
     .map(sanitize);
@@ -98,4 +98,4 @@ export const plainDate = (isoDate) => {
 };
 ```
 
-With those, I was able to get webmentions working. You'll see them in action on [this post](https://stuffandthings.lol/2024-06-09_site_updates/) and others. I'll note that I did remove the Comments section of the webmentions. I know there's debate on the privacy on webmentions and (as of right now) think this a good compromise.
+With those, I was able to get webmentions working. You'll see them in action on [this post](https://my.stuffandthings.lol/2024-06-09_site_updates/) and others. I'll note that I did remove the Comments section of the webmentions. I know there's debate on the privacy on webmentions and (as of right now) think this a good compromise.

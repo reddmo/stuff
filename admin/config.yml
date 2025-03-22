@@ -2,8 +2,8 @@ backend:
   name: github
   repo: reddmo/bikes
   branch: main # Branch to update (optional; defaults to master)
-  site_domain: https://stuffandthings.lol
-  base_url: https://stuffandthings.lol
+  site_domain: https://my.stuffandthings.lol
+  base_url: https://my.stuffandthings.lol
   auth_endpoint: /api/auth
 media_folder: public/img
 public_folder: /img

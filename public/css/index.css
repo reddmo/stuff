@@ -420,8 +420,8 @@ header {
 }
 .postlist-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(22em, 1fr));
+    gap: 1.5rem;
     padding: 0;
 }
 
@@ -429,13 +429,13 @@ header {
     padding: 1rem;
     background: var(--background-color);
 	text-wrap: pretty;
-	border: .350rem solid var(--heading-shadow);
+	border: .225rem solid var(--heading-shadow);
 	border-radius: 4px;
-    box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading);
+    /* box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading); */
 }
 .postlist-card:hover {
-	border: 0.350rem solid var(--heading);
-	box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading-shadow);
+	border: .225rem solid var(--heading);
+	/* box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading-shadow); */
 }
 .postlist-item {
 	align-items: baseline;

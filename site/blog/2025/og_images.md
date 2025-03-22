@@ -24,7 +24,7 @@ So it all seemed straightforward. Until it wasn't. I had an image I wanted to us
 
 ```html
   <div class="root">
-    <h1 class="title"><img src="https://stuffandthings.lol/img/stuff2.png" alt="stuff&things"></h1>
+    <h1 class="title"><img src="https://my.stuffandthings.lol/img/stuff2.png" alt="stuff&things"></h1>
     <div class="card">
       <h2 class="sub-title">{{ title }}</h2>
     </div>
@@ -59,7 +59,7 @@ Re-reading the plugin instructions after a few hours of working on this off-and-
 
 ```js
  eleventyConfig.addPlugin(EleventyPluginOgImage, {
-    shortcodeOutput: async (ogImage) => `<meta property="og:image" content="https://stuffandthings.lol${await ogImage.outputUrl()}" />`,
+    shortcodeOutput: async (ogImage) => `<meta property="og:image" content="https://my.stuffandthings.lol${await ogImage.outputUrl()}" />`,
     satoriOptions: {
       fonts: [
         {
