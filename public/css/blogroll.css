@@ -34,7 +34,7 @@ main :first-child {
 
 .blogroll-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(22em, 1fr));
     gap: 2rem;
     padding: 0;
 }
@@ -42,12 +42,12 @@ main :first-child {
 .blog-card {
     padding: 1rem;
     background: var(--background-color);
-	border: .350rem solid var(--heading-shadow);
+	border: .225rem solid var(--heading-shadow);
 	border-radius: 4px;
-    box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading);
+    /* box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading); */
 }
 
 .blog-card:hover {
-	border: 0.350rem solid var(--heading);
-	box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading-shadow);
+	border: .225rem solid var(--heading);
+	/* box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading-shadow); */
 }
