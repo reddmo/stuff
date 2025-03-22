@@ -10,17 +10,17 @@ eleventyNavigation:
 {% for blog in blogData %}
     <div class="blog-card">
         <h2>
-            <img alt="none" src="{{ blog.favicon }}">
+            <img alt="none" src="{{ blog.favicon }}"><br>
             <a href="{{ blog.url | url }}" target="_blank" class="blogroll">
                 {{ blog.name }}
             </a>
-        </h2>
-        {{ blog.cleansedUrl }}
+        </h2><br>
+
 
         {% if blog.latestPost and blog.latestPost.title %}
-            <p><span style="color: var(--text-color-link-active)">
+            <span style="color: var(--text-color-link-active)">
                 <b>Latest post:</b>
-            </span></p>
+            </span>
             <a href="{{ blog.latestPost.url | url }}" target="_blank" class="blogpost">
                 {{ blog.latestPost.title }}
             </a>

@@ -16,7 +16,6 @@ main :first-child {
 	text-decoration-thickness: .130em;
 	text-underline-offset: .08rem;
 	color: var(--text-color);
-	line-height: 1.75;
 }
 
 .blogroll:hover {
@@ -34,7 +33,7 @@ main :first-child {
 
 .blogroll-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(22em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
     gap: 2rem;
     padding: 0;
 }
@@ -44,6 +43,7 @@ main :first-child {
     background: var(--background-color);
 	border: .225rem solid var(--heading-shadow);
 	border-radius: 4px;
+	line-height: 1.75em;
     /* box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading); */
 }
 
