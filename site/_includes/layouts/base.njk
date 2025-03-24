@@ -49,7 +49,7 @@
 		{%- css %}{% include "public/css/index.css" %}{% endcss %}
 		{%- css %}{% include "public/css/alerts.css" %}{% endcss %}
 		{#- Or add from node_modules #}
-		{# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
+		{%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
 
 	  	<link rel="preload" href="/assets/fonts/DepartureMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
 
@@ -75,16 +75,28 @@
 
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
-
+		<!-- added menu button on mobile courtesy of Martin Hahnel and this article https://blog.martin-haehnel.de/2025/03/23/mobile-nav/#fn1 -->
 		<header>
 			<a href="/" class="home-link" aria-label="Home"><svg style="filter: drop-shadow(3px 3px var(--text-color));" height="81" width="372" xmlns="http://www.w3.org/2000/svg">
 				<text x="0" y="48" alignment-baseline="middle" font-family="var(--font-family)" font-size="3.50rem" font-weight="900" stroke="none" stroke-width="4.5px" paint-order="stroke fill" fill="var(--text-color-link)">stuff<tspan alignment-baseline="middle" stroke="none" stroke-width="4.5px" paint-order="stroke fill" fill="var(--text-color-link-visited)">&</tspan><tspan alignment-baseline="middle" stroke="none" stroke-width="4.5px" paint-order="stroke fill" fill="var(--text-color-link-active)">things</tspan></text>
 			</svg></a>
-
+			<button
+    		class="nav-toggle"
+    		aria-expanded="false"
+    		aria-controls="nav-menu"
+    		onclick="
+  			const nav = document.getElementById('nav-menu');
+  			const expanded = nav.classList.toggle('open');
+  			this.textContent = nav.classList.contains('open') ? 'Close' : 'Menu';
+  			"
+  			>
+    		Menu
+  			</button>
+		</header>
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav id="mainnav">
+			<nav>
 				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
+				<ul id="nav-menu" class="nav">
 					{%- for entry in collections.all | eleventyNavigation %}
 						<li class="nav-item"><a href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
 						</li>
@@ -95,7 +107,8 @@
 						</li>
 				</ul>
 			</nav>
-		</header>
+		
+
 
 		<main id="skip">
 			<heading-anchors selector="h5,h6">
