@@ -24,10 +24,18 @@
 }
 
 @font-face {
-	font-family: "Atkinson Bold";
+	font-family: "Atkinson Extra";
 	font-style: bold;
 	font-weight: 1200;
 	src: url("assets/fonts/AtkinsonHyperlegibleNext-ExtraBold.woff2") format("woff2");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Atkinson Bold";
+	font-style: bold;
+	font-weight: 900;
+	src: url("assets/fonts/AtkinsonHyperlegibleNext-Bold.woff2") format("woff2");
 	font-display: swap;
 }
 
@@ -132,7 +140,9 @@ html {
 	font-family: 'Atkinson Hyperlegible';
 }
 body {
-	max-width: 70em;
+	
+	max-width: 50em;
+	font-size: var(--font-size-base);
 	font-family: 'Atkinson Hyperlegible';
 }
 
@@ -142,7 +152,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Atkinson Bold';
+	font-family: 'Atkinson Extra';
 }
 
 h1 {
@@ -383,7 +393,7 @@ header {
 }
 .home-link {
 	color: var(--text-color-link-visited) !important;
-	font-family: 'Atkinson Bold';
+	font-family: 'Atkinson Extra';
 	font-size: var(--font-size-xxl); /* 16px /16 */
 	text-shadow: 3px 3px var(--text-color);
 	margin: 0;
@@ -430,7 +440,7 @@ header {
 		text-decoration-thickness: .175em;
 		text-decoration-style: solid;
 		text-underline-offset: .16rem;
-		font-family: 'Atkinson Bold';
+		font-family: 'Atkinson Extra';
 }
 	
 .nav-toggle {
@@ -564,7 +574,7 @@ header {
 }
 .postlist-link {
 	font-size: var(--font-size-md); /* 19px /16 */
-	font-weight: 700;
+	font-family: 'Atkinson Bold';
 	flex-basis: calc(100% - 1.5rem);
 	padding-left: .25em;
 	padding-right: .5em;
