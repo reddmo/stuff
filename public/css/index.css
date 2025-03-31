@@ -355,7 +355,7 @@ header {
 	font-family: var(--font-family);
 	font-size: var(--font-size-xxl); /* 16px /16 */
 	font-weight: 900;
-	text-shadow: 0px 4px var(--text-color);
+	text-shadow: 3px 3px var(--text-color);
 	margin: 0;
 }
 .home-link:link:not(:hover) {
