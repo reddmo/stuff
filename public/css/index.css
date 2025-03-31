@@ -7,6 +7,14 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: "Atkinson Hyperlegible";
+	font-style: normal;
+	font-weight: 400;
+	src: url("assets/fonts/AtkinsonHyperlegibleNext-Regular.woff2") format("woff2");
+	font-display: swap;
+}
+
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
@@ -97,7 +105,7 @@ body {
 }
 html {
 	overflow-y: scroll;
-	font-family: var(--font-family);
+	font-family: 'Atkinson Hyperlegible';
 }
 body {
 	max-width: 70em;
