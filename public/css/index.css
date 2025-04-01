@@ -157,8 +157,8 @@ html {
 }
 
 body {
-	max-width: 70em;
-	font-size: var(--font-size-base);
+	max-width: 50em;
+	font-size: var(--font-size-s);
 	font-family: 'Atkinson Hyperlegible';
 	font-style: normal;
 	font-weight: 200;
@@ -558,7 +558,7 @@ header {
 }
 
 .postlist-card {
-    padding: 1rem;
+    padding: .5rem;
     background: var(--background-color);
 	text-wrap: pretty;
 	border: .225rem solid var(--heading-shadow);
