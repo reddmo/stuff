@@ -157,7 +157,7 @@ html {
 }
 
 body {
-	max-width: 50em;
+	max-width: 70em;
 	font-size: var(--font-size-s);
 	font-family: 'Atkinson Hyperlegible';
 	font-style: normal;
