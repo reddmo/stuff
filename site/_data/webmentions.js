@@ -13,4 +13,3 @@ const res = await EleventyFetch(url, {
     mentions: webmentions.children,
   };
  }
- 
