@@ -1,6 +1,16 @@
-main :first-child {
+.mastodon {
+    list-style: none;
+	padding: 0;
+	padding-left: 0;
+}
+
+.mastodon :first-child {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+}
+
+.mastodon-item {
+    margin-bottom: 0.65em;
 }
 
 .mastodon-grid {
@@ -14,15 +24,15 @@ main :first-child {
 .mastodon-card {
     padding: 1rem;
     background: var(--background-color);
-    border: .350rem solid var(--heading-shadow);
+    border: .225rem solid var(--heading-shadow);
     border-radius: 4px;
-    box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading);
+    /* box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading); */
     transition: 0;
 }
 
 .mastodon-card:hover {
-    border: 0.350rem solid var(--heading);
-    box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading-shadow);
+    border: 0.225rem solid var(--heading);
+    /* box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading-shadow); */
 }
 
 .pagination {
@@ -101,7 +111,7 @@ main :first-child {
 .post-content {
     font-size: var(--font-size-s);
     line-height: 1.6;
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
     overflow-wrap: break-word;
     word-break: break-word;
 }
@@ -111,7 +121,7 @@ main :first-child {
 }
 
 .post-content p {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.65em;
 }
 
 .post-media {
@@ -132,8 +142,10 @@ main :first-child {
     gap: 1rem;
     font-size: var(--font-size-xs);
     margin-top: 1rem;
+    margin-bottom: 1rem;
     padding-top: 0.5rem;
-    border-top: 1px solid var(--header-bottom);
+    padding-bottom: 0.5rem;
+    border-bottom: 0.175rem dashed var(--border-color);
 }
 
 .post-meta a {
@@ -150,6 +162,7 @@ main :first-child {
 .social-icon {
     display: inline-flex;
     vertical-align: middle;
+    color: var(--border-color);
 }
 
 .social-icon.svg-baseline svg {

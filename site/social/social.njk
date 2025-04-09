@@ -1,5 +1,8 @@
 ---
 title: Social Posts
+eleventyNavigation:
+  key: Social
+  order: 7
 pagination:
   data: mastodon
   size: 8
@@ -9,9 +12,9 @@ pagination:
 <h1>{{ title }}</h1>
 <br>
   {% if paginatedPosts.length > 0 %}
-    <div class="mastodon-grid">
+    <div class="mastodon">
       {% for post in paginatedPosts %}
-        <article class="mastodon-card">
+        <article class="mastodon">
           <div class="post-content">{{ post.content | safe }}</div><br>
           <div class="post-date">{{ post.created_at | dateToFormat("dd MM yyyy HH:mm", "America/New_York") }}</div>
           {% if post.media_attachments.length > 0 %}
