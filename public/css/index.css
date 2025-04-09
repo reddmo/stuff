@@ -176,7 +176,7 @@ h6 {
 
 h1 {
 	color: var(--heading);
-	font-size: var(--font-size-xl);
+	font-size: var(--font-size-lg);
 	text-shadow: 3px 3px var(--heading-shadow);
 }
 
@@ -597,7 +597,7 @@ header {
 	padding-left: 0;
 }
 .postlist-link {
-	font-size: var(--font-size-md); /* 19px /16 */
+	font-size: var(--font-size-s); /* 19px /16 */
 	font-family: 'Atkinson Hyperlegible';
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
