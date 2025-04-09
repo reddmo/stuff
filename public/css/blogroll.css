@@ -1,7 +1,17 @@
 /* Blogroll */
-main :first-child {
+.blogroll {
+	padding: 0;
+	padding-left: 0;
+}
+
+.blogroll :first-child {
 	margin-top: 0 !important;
 	margin-bottom: 0 !important;
+}
+
+.blogroll-item {
+	margin-bottom: .5em;
+	font-size: var(--font-size-s);
 }
 
 .blogroll a {
@@ -9,6 +19,18 @@ main :first-child {
 	text-decoration-thickness: .130em;
 	text-decoration-style: solid;
 	text-underline-offset: .08rem;
+}
+
+.blogpost {
+	margin-bottom: 2.5rem;
+}
+
+.blogpost-title {
+	color: var(--text-color-link-active);
+	font-size: var(--font-size-base);
+	font-weight: bold;
+	padding-top: .5em;
+	padding-bottom: .25em;
 }
 
 .blogpost a {
@@ -29,25 +51,4 @@ main :first-child {
 	color: var(--text-color);
 	text-decoration-color: var(--text-color-link-active);
 	text-underline-offset: .16rem;
-}
-
-.blogroll-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
-    gap: 2rem;
-    padding: 0;
-}
-
-.blog-card {
-    padding: 1rem;
-    background: var(--background-color);
-	border: .225rem solid var(--heading-shadow);
-	border-radius: 4px;
-	line-height: 1.75em;
-    /* box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading); */
-}
-
-.blog-card:hover {
-	border: .225rem solid var(--heading);
-	/* box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading-shadow); */
 }

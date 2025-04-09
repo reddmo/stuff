@@ -6,24 +6,25 @@ eleventyNavigation:
 {%- css %}{% include "public/css/blogroll.css" %}{% endcss %}
 <h1>Blogroll</h1>
 <br>
-<div class="blogroll-grid">
+<div class="blogroll">
 {% for blog in blogData %}
-    <div class="blog-card">
+    <div>
         <h2>
-            <img alt="none" src="{{ blog.favicon }}"><br>
             <a href="{{ blog.url | url }}" target="_blank" class="blogroll">
                 {{ blog.name }}
             </a>
-        </h2><br>
+        </h2>
 
 
         {% if blog.latestPost and blog.latestPost.title %}
-            <span style="color: var(--text-color-link-active)">
-                <b>Latest post:</b>
-            </span>
-            <a href="{{ blog.latestPost.url | url }}" target="_blank" class="blogpost">
+            <div class="blogpost-title">
+                Latest post:
+            </div>
+            <div class="blogpost">
+            <a href="{{ blog.latestPost.url | url }}" target="_blank">
                 {{ blog.latestPost.title }}
             </a>
+            </div>
         {% endif %}
     </div>
 {% endfor %}
