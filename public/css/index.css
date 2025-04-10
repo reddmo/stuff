@@ -290,10 +290,6 @@ main :first-child {
 	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
 } 
-
-/* header {
-	border-bottom: .175em solid var(--header-bottom);
-} */
 header:after {
 	content: "";
 	display: table;
@@ -368,10 +364,8 @@ code {
 /* Header */
 header {
 	display: flex;
-	gap: 1em;
 	flex-wrap: wrap;
 	justify-content: center;
-	/* flex-wrap: wrap; */
 	align-items: center;
 	padding: 0;
 }
@@ -396,17 +390,7 @@ header {
     top: .125em;
     position: relative;
 }
-  
-.new {
-    background: var(--text-color-link);
-    color: var(--text-color);
-    text-wrap: balance;
-    margin: var(--space-2);
-    padding: var(--space-3);
-    max-inline-size: auto;
-    border: 3px dotted var(-text-color-link-active);
-    border-radius: 6px;
-}
+
 .home-link {
 	color: var(--text-color-link-visited) !important;
 	font-family: 'Atkinson Hyperlegible';
