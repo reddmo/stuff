@@ -16,9 +16,7 @@ eleventyNavigation:
 
 
         {% if blog.latestPost and blog.latestPost.title %}
-            <div class="blogpost-title">
-                Latest post:
-            </div>
+            <div class="blogpost-title">Latest post:</div>
             <div class="blogpost">
             <a href="{{ blog.latestPost.url | url }}" target="_blank">
                 {{ blog.latestPost.title }}

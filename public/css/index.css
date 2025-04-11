@@ -6,7 +6,6 @@
 	src: url("assets/fonts/DepartureMono-Regular.woff2") format("woff2");
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "Atkinson Hyperlegible";
 	font-style: normal;
@@ -14,7 +13,6 @@
 	src: url("assets/fonts/AtkinsonHyperlegibleNext-Regular.woff2") format("woff2");
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "Atkinson Hyperlegible";
 	font-style: normal;
@@ -22,7 +20,6 @@
 	src: url("assets/fonts/AtkinsonHyperlegibleNext-Light.woff2") format("woff2");
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "Atkinson Hyperlegible";
 	font-style: italic;
@@ -30,7 +27,6 @@
 	src: url("assets/fonts/AtkinsonHyperlegibleNext-RegularItalic.woff2") format("woff2");
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "Atkinson Hyperlegible";
 	font-style: normal;
@@ -38,7 +34,6 @@
 	src: url("assets/fonts/AtkinsonHyperlegibleNext-ExtraBold.woff2") format("woff2");
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "Atkinson Hyperlegible";
 	font-style: normal;
@@ -46,7 +41,6 @@
 	src: url("assets/fonts/AtkinsonHyperlegibleNext-Bold.woff2") format("woff2");
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "Atkinson Hyperlegible";
 	font-style: normal;
@@ -54,7 +48,6 @@
 	src: url("assets/fonts/AtkinsonHyperlegibleNext-SemiBold.woff2") format("woff2");
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "Atkinson Mono";
 	font-style: normal;
@@ -62,25 +55,18 @@
 	src: url("assets/fonts/AtkinsonHyperlegibleMono-Regular.woff2") format("woff2");
 	font-display: swap;
 }
-
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
-}
-
-/* Theme colors */
-:root {
 	--color-gray-20: light-dark(#e0e0e0,#e0e0e0);
 	--color-gray-50: light-dark(#C0C0C0,#C0C0C0);
 	--color-gray-90: light-dark(#333,#dad8d8);
-
 	--color-note: light-dark(#247e81,#9daaf2);
 	--color-tip: light-dark(#b30d0d,#ff6a3d);
 	--color-warning: light-dark(#9a6700,#d29922);
 	--color-severe: light-dark(#bc4c00,#db6d28);
 	--color-caution: light-dark(#d1242f,#f85149);
 	--color-important: light-dark(#8250df,#a371f7);
-
 	--background-color: light-dark(#fefefe,#090200);
     --text-color: light-dark(#212829,#f2f6f7);
     --text-color-link: light-dark(#e31c3d,#50d0ee);
@@ -95,7 +81,6 @@
   
     /* Button - maintained for contrast */
     --button-text: light-dark(#ffffff, #ffffff);
-
 	--syntax-tab-size: 2;
 
 	--font-size-xs: clamp(0.8681rem, 0.8639rem + 0.0208vw, 0.88rem);
@@ -119,18 +104,15 @@
 	--space-10: 6rem;
 	--gutter: var(--space-3);
 }
-
 /* Global stylesheet */
 * {
 	box-sizing: content-box;
 }
-
 heading-anchors:not(:defined) :is(h2,h3,h4,h5,h6):after {
 	content: "#";
 	padding: 0 .25em;
 	opacity: 0;
 }
-
 html {
 	color-scheme: light dark;
 	/* border: .300em solid;
@@ -138,7 +120,6 @@ html {
 	border-width: .175em;
 	border-image-source: linear-gradient(var(--text-color-link-active),var(--text-color-link),var(--text-color-link-visited)); */
 }
-
 html,
 body {
 	padding: 0;
@@ -151,7 +132,6 @@ html {
 	overflow-y: scroll;
 	font-family: 'Atkinson Hyperlegible';
 }
-
 body {
 	max-width: 70em;
 	font-size: var(--font-size-s);
@@ -159,7 +139,6 @@ body {
 	font-style: normal;
 	font-weight: 200;
 }
-
 h1,
 h2,
 h3,
@@ -169,18 +148,15 @@ h6 {
 	font-family: 'Atkinson Hyperlegible';
 	font-weight: 900;
 }
-
 h1 {
 	color: var(--heading);
 	font-size: var(--font-size-lg);
 	text-shadow: 3px 3px var(--heading-shadow);
 }
-
 h2 {
 	font-size: var(--font-size-md);
 	color: var(--text-color-link);
 }
-
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
 .visually-hidden {
 	clip: rect(0 0 0 0);
@@ -191,40 +167,33 @@ h2 {
 	white-space: nowrap;
 	width: 1px;
 }
-
 img,
 picture {
 	height: auto;
 	max-width: 100%;
-	/* display: block; */
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 4px;
 }
-
 .svg {
 	margin-top: 0;
 	margin-bottom: 0;
 	align-content: center;
 	display: block;
 }
-
 p:last-child {
 	margin-bottom: 0;
 }
 p {
 	line-height: 1.75;
 }
-
 p.caption {
 	text-align: center;
 	font-size: var(--font-size-xs);
 }
-
 li {
 	line-height: 2.0;
 }
-
 a[href] {
 	color: var(--text-color); 
 	position: relative;
@@ -248,13 +217,11 @@ a[href]:active {
 	text-decoration-style: solid;
 	text-underline-offset: .16rem;
 }
-
 blockquote {
 	padding: 0 1em;
 	color: var(--color-gray-90);
 	border-left: 0.25em solid var(--text-color-link-active);
 }
-
 button {
 	display: inline-block;
 	background: linear-gradient(var(--background-color),var(--background-color)) padding-box,
@@ -270,18 +237,15 @@ button {
 	line-height: 1.25em;
 	cursor: pointer;
 }
-
 button a {
 	text-decoration: none !important;
 }
-
 button:hover,
 button:focus {
 	background: linear-gradient(var(--text-color),var(--text-color)) padding-box,
 				linear-gradient(90deg, var(--text-color-link-visited),var(--text-color-link),var(--text-color-link-active)) border-box !important;
 	color: var(--background-color) !important;
 }
-
 main,
 footer {
 	padding: 1.25rem;
@@ -298,7 +262,6 @@ header:after {
 .links-nextprev {
 	font-family: 'Atkinson Hyperlegible';
 }
-
 .links-nextprev {
 	display: flex;
 	justify-content: space-between;
@@ -315,7 +278,6 @@ header:after {
 .links-nextprev-next {
 	text-align: right;
 }
-
 table {
 	margin: 1em 0;
 }
@@ -323,7 +285,6 @@ table td,
 table th {
 	padding-right: 1em;
 }
-
 pre,
 code {
 	font-family: 'Atkinson Mono';
@@ -360,7 +321,6 @@ code {
 	border-radius: 12px;
 	padding: .225em;
 }
-
 /* Header */
 header {
 	display: flex;
@@ -369,28 +329,14 @@ header {
 	align-items: center;
 	padding: 0;
 }
-
-.card {
-    background: var(--text-color-link);
-    color: var(--text-color);
-    text-wrap: balance;
-    margin: var(--space-2);
-    padding: var(--space-3);
-    max-inline-size: auto;
-    border: 3px solid var(--text-color-link-active);
-    border-radius: 6px;
-}
-
 .code-icon {
     display: inline-flex;
     vertical-align: middle;
 }
-
 .code-icon.svg-baseline svg {
     top: .125em;
     position: relative;
 }
-
 .home-link {
 	color: var(--text-color-link-visited) !important;
 	font-family: 'Atkinson Hyperlegible';
@@ -405,11 +351,9 @@ header {
 .home-link:link:hover {
 	text-decoration: none;
 }
-
 .footnotes {
 	border-top: 2px solid var(--text-color-link-visited) !important;
 }
-
 /* Nav */
 .nav {
 	display: flex;
@@ -421,14 +365,12 @@ header {
 	padding: 0.5rem 0 0.5rem;
 	margin: 0 0 1rem;
 }
-	
 .nav-item {
 	margin: 6px;
 	font-weight: 400;
 	font-style: normal;
 	font-size: var(--font-size-s);
 }
-	
 .nav-item a[href]:not(:hover) {
 		color: var(--text-color) !important; 
 		text-decoration-color: var(--text-color-link);
@@ -436,7 +378,6 @@ header {
 		text-decoration-style: solid;
 		text-underline-offset: .10rem;
 }
-	
 .nav-item a[href][aria-current="page"] {
 		color: var(--text-color-link-active) !important; 
 		text-decoration-thickness: .175em;
@@ -444,37 +385,15 @@ header {
 		text-underline-offset: .16rem;
 		font-weight: 900;
 }
-
 /* Posts list */
 .postlist {
 	list-style: none;
 	padding: 0;
 	padding-left: 0;
 }
-
 .postlist :first-child {
 	margin-top: 0 !important;
 	margin-bottom: 0.65em !important;
-}
-
-.postlist-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(22em, 1fr));
-    gap: 1.5rem;
-    padding: 0;
-}
-
-.postlist-card {
-    padding: .5rem;
-    background: var(--background-color);
-	text-wrap: pretty;
-	border: .225rem solid var(--heading-shadow);
-	border-radius: 4px;
-    /* box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading); */
-}
-.postlist-card:hover {
-	border: .225rem solid var(--heading);
-	/* box-shadow: 1px 1px var(--background-color), 8px 8px var(--heading-shadow); */
 }
 .postlist-item {
 	align-items: baseline;
@@ -519,7 +438,6 @@ header {
 .postlist-item-active .postlist-link {
 	font-weight: bold;
 }
-
 /* Tags */
 .post-tag {
 	display: inline-flex;
@@ -531,11 +449,9 @@ header {
 	text-decoration-style: solid;
 	text-underline-offset: .10rem;
 }
-
 .postlist-item > .post-tag {
 	align-self: center;
 }
-
 /* Tags list */
 .post-metadata {
 	display: inline-flex;
@@ -548,12 +464,10 @@ header {
 .post-metadata time {
 	margin-right: 1em;
 }
-
 .footer {
 	font-family: 'Atkinson Hyperlegible';
 	justify-content: center;
 }
-
 .footer-links {
 	list-style: none;
 	display: flex;
@@ -562,7 +476,6 @@ header {
 	gap: 1.5rem;
 	padding-left: 0;
 }
-
 /* Markdown Alerts */
 .markdown-alert {
 	padding: 0.5rem 1rem;
@@ -572,22 +485,18 @@ header {
 	word-break: break-word;
 	text-wrap: balance;
 }
-  
 .markdown-alert>:first-child {
 	margin-top: 0 !important;
 }
-  
 .markdown-alert>:last-child {
 	margin-bottom: 0;
 }
-  
 .markdown-alert .markdown-alert-title {
 	display: flex;
 	font-weight: 700;
 	align-items: center;
 	line-height: 1
 }
-  
 .markdown-alert .markdown-alert-title .octicon {
 	margin-right: 0.5rem;
 	display: inline-block;
@@ -595,47 +504,36 @@ header {
 	vertical-align: baseline;
 	fill: currentColor;
 }
-  
 .markdown-alert.markdown-alert-note {
 	border-left-color: var(--color-note);
 }
-  
 .markdown-alert.markdown-alert-note .markdown-alert-title {
 	color: var(--color-note);
 }
-  
 .markdown-alert.markdown-alert-important {
 	border-left-color: var(--color-important);
 }
-  
 .markdown-alert.markdown-alert-important .markdown-alert-title {
 	color: var(--color-important);
 }
-  
 .markdown-alert.markdown-alert-warning {
 	border-left-color: var(--color-warning);
 }
-  
 .markdown-alert.markdown-alert-warning .markdown-alert-title {
 	color: var(--color-warning);
 }
-  
 .markdown-alert.markdown-alert-tip {
 	border-left-color: var(--color-tip);
 }
-  
 .markdown-alert.markdown-alert-tip .markdown-alert-title {
 	color: var(--color-tip);
 }
-  
 .markdown-alert.markdown-alert-caution {
 	border-left-color: var(--color-caution);
 }
-  
 .markdown-alert.markdown-alert-caution .markdown-alert-title {
 	color: var(--color-caution);
 }
-
 /* Guestbook */
 input,
 textarea {
@@ -665,7 +563,6 @@ input[type=button], input[type=submit], input[type=reset] {
   	border-radius: 5px;
   	cursor: pointer;
 }
-
 #guestbooks___guestbook-messages-container blockquote {
   	margin: -5px 0 40px;
   	padding: 20px 30px;
@@ -683,58 +580,22 @@ input[type=button], input[type=submit], input[type=reset] {
   	margin-right: 8px;
   	content: '💬';
 }
-
 /* Blogroll */
-.blogroll {
-	padding: 0;
-	padding-left: 0;
-}
-
 .blogroll :first-child {
 	margin-top: 0 !important;
 	margin-bottom: 0 !important;
 }
-
 .blogroll-item {
 	margin-bottom: .5em;
 	font-size: var(--font-size-s);
 }
-
-.blogroll a {
-	text-decoration-color: var(--text-color-link);
-	text-decoration-thickness: .130em;
-	text-decoration-style: solid;
-	text-underline-offset: .08rem;
-}
-
 .blogpost {
 	margin-bottom: 2.5rem;
 }
-
 .blogpost-title {
 	color: var(--text-color-link-active);
 	font-size: var(--font-size-base);
 	font-weight: bold;
 	padding-top: .5em;
 	padding-bottom: .25em;
-}
-
-.blogpost a {
-	text-decoration-color: var(--text-color-link);
-	text-decoration-thickness: .130em;
-	text-underline-offset: .08rem;
-	color: var(--text-color);
-}
-
-.blogroll:hover {
-	text-decoration-color: var(--text-color-link-active);
-	text-decoration-thickness: .130em;
-	text-decoration-style: solid;
-	text-underline-offset: .16rem;
-}
-
-.blogpost:hover {
-	color: var(--text-color);
-	text-decoration-color: var(--text-color-link-active);
-	text-underline-offset: .16rem;
 }
