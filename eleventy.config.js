@@ -10,12 +10,9 @@ import markdownItGitHubAlerts from 'markdown-it-github-alerts';
 import markdownItAttrs from "markdown-it-attrs";
 import markdownItFootnote from 'markdown-it-footnote';
 import { full as emoji } from 'markdown-it-emoji';
-import eleventyLucideicons from "@grimlink/eleventy-plugin-lucide-icons";
 import pluginFilters from "./_config/filters.js";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import Image from '@11ty/eleventy-img';
-import dayjs from 'dayjs';
-import sanitizeHTML from 'sanitize-html';
 import path from 'node:path';
 
 // Setup markdown-it configuration
@@ -60,57 +57,6 @@ const createFeedConfig = (options) => {
   return { ...baseConfig, ...options };
 };
 
-// Webmention utility functions
-export const toISOString = dateString => dayjs(dateString).toISOString();
-
-export const webmentionsByUrl = (webmentions, url) => {
-  const allowedTypes = {
-    likes: ["like-of"],
-    reposts: ["repost-of"],
-    comments: ["mention-of", "in-reply-to"],
-  };
-
-  const sanitize = (entry) => {
-    if (entry.content && entry.content.html) {
-      entry.content = sanitizeHTML(entry.content.html, {
-        allowedTags: ["b", "i", "em", "strong", "a"],
-      });
-    }
-    return entry;
-  };
-
-  const pageWebmentions = webmentions
-    .filter(mention => mention["wm-target"] === "https://my.stuffandthings.lol" + url)
-    .sort((a, b) => new Date(b.published) - new Date(a.published))
-    .map(sanitize);
-
-  const likes = pageWebmentions
-    .filter(mention => allowedTypes.likes.includes(mention["wm-property"]))
-    .filter(like => like.author)
-    .map(like => like.author);
-
-  const reposts = pageWebmentions
-    .filter(mention => allowedTypes.reposts.includes(mention["wm-property"]))
-    .filter(repost => repost.author)
-    .map(repost => repost.author);
-
-  const comments = pageWebmentions
-    .filter(mention => allowedTypes.comments.includes(mention["wm-property"]))
-    .filter(comment => {
-      const { author, published, content } = comment;
-      return author && author.name && published && content;
-    });
-
-  const mentionCount = likes.length + reposts.length + comments.length;
-  return { likes, reposts, comments, mentionCount };
-};
-
-export const plainDate = (isoDate) => {
-  const date = new Date(isoDate);
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  return date.toLocaleDateString("en-US", options);
-};
-
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {
   // --- File passthrough configuration ---
@@ -145,12 +91,6 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginFilters);
   eleventyConfig.addPlugin(IdAttributePlugin);
   
-  // --- Icon plugin ---
-  eleventyConfig.addPlugin(eleventyLucideicons, {
-    "class": "svg",
-    "stroke": "currentColor"
-  });
-
   // --- Feed plugins ---
   eleventyConfig.addPlugin(feedPlugin, createFeedConfig({
     type: "atom",
@@ -189,8 +129,6 @@ export default async function(eleventyConfig) {
 
   // --- Custom filters ---
   eleventyConfig.addFilter("contentImgUrlFilter", contentImgUrlFilter);
-  eleventyConfig.addFilter("webmentionsByUrl", webmentionsByUrl);
-  eleventyConfig.addFilter("plainDate", plainDate);
   eleventyConfig.addFilter("dateToFormat", function(date, format) {
     return new Date(date).toLocaleDateString('en-US', {
       year: 'numeric', 
@@ -205,7 +143,6 @@ export default async function(eleventyConfig) {
 
   // --- Custom shortcodes ---
   eleventyConfig.addShortcode("currentBuildDate", () => new Date().toISOString());
-  eleventyConfig.addShortcode("lucide", function(eleventyLucideicons) { /* … */ });
 
   // --- Custom collections ---
   eleventyConfig.addCollection("posts", collections => 

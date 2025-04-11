@@ -460,36 +460,6 @@ header {
 		text-underline-offset: .16rem;
 		font-weight: 900;
 }
-	
-/* .nav {
-	display: inline-block;
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	overflow: wrap;
-}
-
-.nav-item {
-	display: inline-block;
-	margin: 6px;
-	font-weight: 400;
-}
-
-.nav-item a[href]:not(:hover) {
-	color: var(--text-color) !important; 
-	text-decoration-color: var(--text-color-link);
-	text-decoration-thickness: .175em;
-	text-decoration-style: solid;
-	text-underline-offset: .10rem;
-}
-
-.nav-item a[href][aria-current="page"] {
-	color: var(--text-color-link-active) !important; 
-	text-decoration-thickness: .175em;
-	text-decoration-style: solid;
-	text-underline-offset: .16rem;
-	font-weight: 900;
-} */
 
 /* Posts list */
 .postlist {
@@ -607,4 +577,180 @@ header {
 	justify-content: center;
 	gap: 1.5rem;
 	padding-left: 0;
+}
+
+/* Markdown Alerts */
+.markdown-alert {
+	padding: 0.5rem 1rem;
+	margin-bottom: 16px;
+	color: var(--text-color-link-active);
+	border-left: .25em solid #888;
+	word-break: break-word;
+	text-wrap: balance;
+}
+  
+.markdown-alert>:first-child {
+	margin-top: 0 !important;
+}
+  
+.markdown-alert>:last-child {
+	margin-bottom: 0;
+}
+  
+.markdown-alert .markdown-alert-title {
+	display: flex;
+	font-weight: 700;
+	align-items: center;
+	line-height: 1
+}
+  
+.markdown-alert .markdown-alert-title .octicon {
+	margin-right: 0.5rem;
+	display: inline-block;
+	overflow: visible !important;
+	vertical-align: baseline;
+	fill: currentColor;
+}
+  
+.markdown-alert.markdown-alert-note {
+	border-left-color: var(--color-note);
+}
+  
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+	color: var(--color-note);
+}
+  
+.markdown-alert.markdown-alert-important {
+	border-left-color: var(--color-important);
+}
+  
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+	color: var(--color-important);
+}
+  
+.markdown-alert.markdown-alert-warning {
+	border-left-color: var(--color-warning);
+}
+  
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+	color: var(--color-warning);
+}
+  
+.markdown-alert.markdown-alert-tip {
+	border-left-color: var(--color-tip);
+}
+  
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+	color: var(--color-tip);
+}
+  
+.markdown-alert.markdown-alert-caution {
+	border-left-color: var(--color-caution);
+}
+  
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+	color: var(--color-caution);
+}
+
+/* Guestbook */
+input,
+textarea {
+  	margin: 0 0 10px;
+  	padding: 5px 10px;
+  	color: var(--text-color) !important;
+  	background: var(--background-color);
+  	border: 2px solid var(--text-color-link-visited);
+  	border-radius: 5px;
+  	font-family: 'Departure';
+}
+input {
+  	width: 55%;
+}
+textarea {
+  	width: 95%;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  	margin: 0 0 20px;
+  	width: 15%;
+  	padding: 7px;
+  	font-family: 'Departure';
+  	font-weight: bold;
+  	color: var(--background-color) !important;
+  	background: var(--text-color-link-active);
+  	border: 2px solid var(--text-color-link);
+  	border-radius: 5px;
+  	cursor: pointer;
+}
+
+#guestbooks___guestbook-messages-container blockquote {
+  	margin: -5px 0 40px;
+  	padding: 20px 30px;
+  	color: var(--background-color);
+  	background-color: var(--text-color-link-visited);
+
+}
+#guestbooks___guestbook-messages-header {
+  	margin:25px 0;
+}
+#guestbooks___input-container {
+  	color: var(--text-color);
+}
+#guestbooks___guestbook-messages-header::before {
+  	margin-right: 8px;
+  	content: '💬';
+}
+
+/* Blogroll */
+.blogroll {
+	padding: 0;
+	padding-left: 0;
+}
+
+.blogroll :first-child {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.blogroll-item {
+	margin-bottom: .5em;
+	font-size: var(--font-size-s);
+}
+
+.blogroll a {
+	text-decoration-color: var(--text-color-link);
+	text-decoration-thickness: .130em;
+	text-decoration-style: solid;
+	text-underline-offset: .08rem;
+}
+
+.blogpost {
+	margin-bottom: 2.5rem;
+}
+
+.blogpost-title {
+	color: var(--text-color-link-active);
+	font-size: var(--font-size-base);
+	font-weight: bold;
+	padding-top: .5em;
+	padding-bottom: .25em;
+}
+
+.blogpost a {
+	text-decoration-color: var(--text-color-link);
+	text-decoration-thickness: .130em;
+	text-underline-offset: .08rem;
+	color: var(--text-color);
+}
+
+.blogroll:hover {
+	text-decoration-color: var(--text-color-link-active);
+	text-decoration-thickness: .130em;
+	text-decoration-style: solid;
+	text-underline-offset: .16rem;
+}
+
+.blogpost:hover {
+	color: var(--text-color);
+	text-decoration-color: var(--text-color-link-active);
+	text-underline-offset: .16rem;
 }
