@@ -16,14 +16,3 @@ numberOfLatestPostsToShow: 6
 {% if morePosts > 0 %}
 <p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk"> the blog</a> or check out the <a href="notes.njk"> notes</a> that hit my <a href="{{ metadata.mastodonUrl }}"> social.lol feed</a>.</p>
 {% endif %}
-
-{# <p><script src="https://status.lol/jasonm.js?time&link&fluent"></script></p> #}
-
-{# List every content page in the project #}
-{#
-<ul>
-	{% for entry in collections.notes %}
-	<li><a href="{{ entry.url }}">{{ entry.url }}</a></li>
-	{% endfor %}
-</ul>
-#}

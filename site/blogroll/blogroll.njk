@@ -4,25 +4,11 @@ eleventyNavigation:
   order: 6
 ---
 <h1>Blogroll</h1>
-<br>
-<div class="blogroll">
-{% for blog in blogData %}
-    <div>
-        <h2>
-            <a href="{{ blog.url | url }}" target="_blank" class="blogroll">
-                {{ blog.name }}
-            </a>
-        </h2>
-
-
-        {% if blog.latestPost and blog.latestPost.title %}
-            <div class="blogpost-title">Latest post:</div>
-            <div class="blogpost">
-            <a href="{{ blog.latestPost.url | url }}" target="_blank">
-                {{ blog.latestPost.title }}
-            </a>
-            </div>
-        {% endif %}
-    </div>
-{% endfor %}
-</div>
+<ol class="blogroll">
+    {% for blog in blogData %}
+        <li class="blogroll-item{% if blog.url == url %} blogroll-item-active{% endif %}">
+            <a href="{{ blog.url | url }}" class="blogroll-link" aria-label="{{ blog.name }}">{{ blog.name }}</a><br>
+            <a href="{{ blog.latestPost.url | url }}" target="_blank" class="blogroll-description" aria-label="{{ blog.latestPost.title }}">{% if blog.latestPost and blog.latestPost.title %}{{ blog.latestPost.title }}{% else %}<code>{{ blog.latestPost.url }}</code>{% endif %}</a>
+        </li>
+    {% endfor %}
+    </ol>

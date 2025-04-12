@@ -250,10 +250,6 @@ main,
 footer {
 	padding: 1.25rem;
 }
-main :first-child {
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
-} 
 header:after {
 	content: "";
 	display: table;
@@ -270,7 +266,7 @@ header:after {
 	padding: 1em 0;
 }
 .links-nextprev {
-	border-top: .175em solid var(--header-bottom);
+	border-top: .175rem dashed var(--border-color);
 }
 .links-nextprev > * {
 	flex-grow: 1;
@@ -372,18 +368,18 @@ header {
 	font-size: var(--font-size-s);
 }
 .nav-item a[href]:not(:hover) {
-		color: var(--text-color) !important; 
-		text-decoration-color: var(--text-color-link);
-		text-decoration-thickness: .175em;
-		text-decoration-style: solid;
-		text-underline-offset: .10rem;
+	color: var(--text-color) !important; 
+	text-decoration-color: var(--text-color-link);
+	text-decoration-thickness: .175em;
+	text-decoration-style: solid;
+	text-underline-offset: .10rem;
 }
 .nav-item a[href][aria-current="page"] {
-		color: var(--text-color-link-active) !important; 
-		text-decoration-thickness: .175em;
-		text-decoration-style: solid;
-		text-underline-offset: .16rem;
-		font-weight: 900;
+	color: var(--text-color-link-active) !important; 
+	text-decoration-thickness: .175em;
+	text-decoration-style: solid;
+	text-underline-offset: .16rem;
+	font-weight: 900;
 }
 /* Posts list */
 .postlist {
@@ -581,21 +577,50 @@ input[type=button], input[type=submit], input[type=reset] {
   	content: '💬';
 }
 /* Blogroll */
-.blogroll :first-child {
-	margin-top: 0 !important;
-	margin-bottom: 0 !important;
+.blogroll {
+	list-style: none;
+	padding: 0;
+	padding-left: 0;
 }
 .blogroll-item {
-	margin-bottom: .5em;
-	font-size: var(--font-size-s);
+	align-items: baseline;
+	counter-increment: start-from 1;
+	margin-bottom: 0.65em;
 }
-.blogpost {
-	margin-bottom: 2.5rem;
+.blogroll-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero);
+	line-height: 100%;
+	text-align: right;
+	margin-left: 0;
 }
-.blogpost-title {
-	color: var(--text-color-link-active);
-	font-size: var(--font-size-base);
+.blogroll-item:before {
+	font-size: var(--font-size-xs); /* 13px /16 */
+	font-weight: 400;
+	font-style: italic;
+	color: var(--color-gray-90);
+}
+.blogroll-description {
+	display: inline-block;
+	font-size: var(--font-size-s); /* 13px /16 */
+	color: var(--text-color-link);
+	margin-left: 3em;
+	font-weight: 400;
+	text-wrap: pretty;
+}
+.blogroll-link {
+	font-size: var(--font-size-base); /* 19px /16 */
+	font-family: 'Atkinson Hyperlegible';
+	font-weight: 900;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0.10rem;
+	text-decoration-thickness: .175em;
+	text-wrap: pretty;
+}
+.blogroll-item-active .blogroll-link {
 	font-weight: bold;
-	padding-top: .5em;
-	padding-bottom: .25em;
 }
