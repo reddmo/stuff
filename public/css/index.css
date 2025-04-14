@@ -81,7 +81,6 @@ body {
 }
 html {
 	overflow-y: scroll;
-	font-family: var(--font-family-monospace);
 }
 body {
 	max-width: 70em;
@@ -96,7 +95,6 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--font-family-monospace);
 	font-weight: 900;
 }
 h1 {
@@ -123,7 +121,6 @@ picture {
 	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	border-radius: 4px;
 }
 .svg {
 	margin-top: 0;
@@ -179,10 +176,8 @@ button {
 	color: var(--text-color);
 	padding: 5px;
 	border: 3px solid transparent;
-	border-radius: 12px;
 	place-items: center;
 	font-size: inherit;
-	font-family: var(--font-family-monospace);
 	font-weight: 900;
 	line-height: 1.25em;
 	cursor: pointer;
@@ -204,9 +199,6 @@ header:after {
 	content: "";
 	display: table;
 	clear: both;
-}
-.links-nextprev {
-	font-family: var(--font-family-monospace);
 }
 .links-nextprev {
 	display: flex;
@@ -231,13 +223,8 @@ table td,
 table th {
 	padding-right: 1em;
 }
-pre,
-code {
-	font-family: var(--font-family-monospace);
-}
 pre {
 	background-color: #090200 !important;
-	font-family: var(--font-family-monospace) !important;
 	border: .500em solid;
 	margin: 0.65em;
 	border-image-slice: 1;
@@ -264,7 +251,6 @@ code {
 	word-break: break-all;
 	background-color: var(--code-background-color);
 	color: var(--border-color);
-	border-radius: 12px;
 	padding: .225em;
 }
 /* Header */
@@ -285,7 +271,6 @@ header {
 }
 .home-link {
 	color: var(--text-color-link-visited) !important;
-	font-family: var(--font-family-monospace);
 	font-size: var(--font-size-xl); /* 16px /16 */
 	font-weight: 900;
 	margin: 0;
@@ -370,7 +355,6 @@ header {
 }
 .postlist-link {
 	font-size: var(--font-size-s); /* 19px /16 */
-	font-family: var(--font-family-monospace);
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
 	padding-left: .25em;
@@ -410,7 +394,6 @@ header {
 	margin-right: 1em;
 }
 .footer {
-	font-family: var(--font-family-monospace);
 	justify-content: center;
 }
 .footer-links {
@@ -487,8 +470,6 @@ textarea {
   	color: var(--text-color) !important;
   	background: var(--background-color);
   	border: 2px solid var(--text-color-link-visited);
-  	border-radius: 5px;
-  	font-family: var(--font-family-monospace);
 }
 input {
   	width: 55%;
@@ -499,13 +480,10 @@ textarea {
 input[type=button], input[type=submit], input[type=reset] {
   	margin: 0 0 20px;
   	width: 15%;
-  	padding: 7px;
-  	font-family: var(--font-family-monospace);
   	font-weight: bold;
   	color: var(--background-color) !important;
   	background: var(--text-color-link-active);
   	border: 2px solid var(--text-color-link);
-  	border-radius: 5px;
   	cursor: pointer;
 }
 #guestbooks___guestbook-messages-container blockquote {
@@ -560,7 +538,6 @@ input[type=button], input[type=submit], input[type=reset] {
 }
 .blogroll-link {
 	font-size: var(--font-size-base); /* 19px /16 */
-	font-family: var(--font-family-monospace);
 	font-weight: 900;
 	flex-basis: calc(100% - 1.5rem);
 	padding-left: .25em;

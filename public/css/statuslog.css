@@ -5,12 +5,10 @@
 	gap: 0;
 	margin: 15px;
 	padding: 20px 30px;
-	font-family: var(--font-family);
 	font-size: var(--font-size-xs);
 	color: var(--text-color);
 	background: var(--background-color);
 	border: 3px solid var(--text-color-link);
-	border-radius: 10px;
   }
   .statuslol_emoji_container {
 	min-width: 54px;
