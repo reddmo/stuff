@@ -9,9 +9,6 @@
 :root {
 	--font-family: -apple-system, system-ui, sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
-	--color-gray-20: light-dark(#e0e0e0,#e0e0e0);
-	--color-gray-50: light-dark(#C0C0C0,#C0C0C0);
-	--color-gray-90: light-dark(#333,#dad8d8);
 	--color-note: light-dark(#247e81,#9daaf2);
 	--color-tip: light-dark(#b30d0d,#ff6a3d);
 	--color-warning: light-dark(#9a6700,#d29922);
@@ -28,7 +25,7 @@
     --code-color: light-dark(#222,#ddd);
     --heading: light-dark(#e31c3d,#f7ca18);
     --heading-shadow: light-dark(#4e2e92,rgba(246,36,89));
-    --header-bottom: var(--color-gray-50);
+    --header-bottom: light-dark(#C0C0C0,#C0C0C0);
   
     /* Button - maintained for contrast */
     --button-text: light-dark(#ffffff, #ffffff);
@@ -42,18 +39,6 @@
     --font-size-xl: clamp(2.16rem, 1.9772rem + 0.914vw, 2.6855rem);
     --font-size-xxl: clamp(2.592rem, 2.3259rem + 1.3303vw, 3.3569rem);
     --font-size-max: clamp(3.1104rem, 2.7327rem + 1.8883vw, 4.1962rem);
-
-	--space-1: 0.35rem;
-	--space-2: 0.5rem;
-	--space-3: 1rem;
-	--space-4: 1.5rem;
-	--space-5: 2rem;
-	--space-6: 2.5rem;
-	--space-7: 3rem;
-	--space-8: 4rem;
-	--space-9: 5rem;
-	--space-10: 6rem;
-	--gutter: var(--space-3);
 }
 /* Global stylesheet */
 * {
@@ -66,10 +51,6 @@ heading-anchors:not(:defined) :is(h2,h3,h4,h5,h6):after {
 }
 html {
 	color-scheme: light dark;
-	/* border: .300em solid;
-	border-image-slice: 1;
-	border-width: .175em;
-	border-image-source: linear-gradient(var(--text-color-link-active),var(--text-color-link),var(--text-color-link-visited)); */
 }
 html,
 body {
@@ -166,7 +147,7 @@ a[href]:active {
 }
 blockquote {
 	padding: 0 1em;
-	color: var(--color-gray-90);
+	color: var(--border-color);
 	border-left: 0.25em solid var(--text-color-link-active);
 }
 button {
@@ -302,11 +283,7 @@ header {
 	font-size: var(--font-size-s);
 }
 .nav-item a[href]:not(:hover) {
-	color: var(--text-color) !important; 
 	text-decoration-color: var(--text-color-link);
-	text-decoration-thickness: .175em;
-	text-decoration-style: solid;
-	text-underline-offset: .10rem;
 }
 .nav-item a[href][aria-current="page"] {
 	color: var(--text-color-link-active) !important; 
@@ -343,7 +320,7 @@ header {
 	font-size: var(--font-size-xs); /* 13px /16 */
 	font-weight: 400;
 	font-style: italic;
-	color: var(--color-gray-90);
+	color: var(--border-color);
 }
 .postlist-description {
 	font-size: var(--font-size-s); /* 13px /16 */
@@ -372,11 +349,12 @@ header {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	text-transform: uppercase;
+	text-transform: lowercase;
 	text-decoration-color: var(--text-color-link);
 	text-decoration-thickness: .175em;
 	text-decoration-style: solid;
 	text-underline-offset: .10rem;
+	font-weight: bold;
 }
 .postlist-item > .post-tag {
 	align-self: center;
@@ -526,7 +504,7 @@ input[type=button], input[type=submit], input[type=reset] {
 	font-size: var(--font-size-xs); /* 13px /16 */
 	font-weight: 400;
 	font-style: italic;
-	color: var(--color-gray-90);
+	color: var(--border-color);
 }
 .blogroll-description {
 	display: inline-block;
