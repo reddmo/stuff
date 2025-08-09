@@ -14,6 +14,7 @@ import pluginFilters from "./_config/filters.js";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import Image from '@11ty/eleventy-img';
 import path from 'node:path';
+import fs from "node:fs";
 
 // Setup markdown-it configuration
 const setupMarkdown = () => {
@@ -119,6 +120,8 @@ export default async function(eleventyConfig) {
   // --- Image optimization ---
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     extensions: "html",
+    urlPath: "/img/built/",
+		outputDir: ".cache/@11ty/img/",
     formats: ["avif", "webp", "jpg", "png", "auto"],
     widths: ["auto"],
     defaultAttributes: {
